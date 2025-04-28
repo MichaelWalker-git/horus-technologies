@@ -7,9 +7,11 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-eNsd+mAdThqdhF/+ZBzOzdI8tT1WzcmtrFclYjl0e1gMQe4Z3ueW8YvGiqaf1oDt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+          integrity="sha384-eNsd+mAdThqdhF/+ZBzOzdI8tT1WzcmtrFclYjl0e1gMQe4Z3ueW8YvGiqaf1oDt" crossorigin="anonymous">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <!-- Navigation Bar -->
@@ -18,9 +20,8 @@
         <div class="container">
             <a href="#" class="logo">Horus Technologies</a>
             <ul class="nav-links">
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Our Services</a></li>
-                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#about">What We Do</a></li>
+                <li><a href="#stories">Our stories</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="menu-toggle">
@@ -33,86 +34,80 @@
 <!-- Hero Section -->
 <section class="hero">
     <div class="container">
-        <h1>Cloud Solutions for Tomorrow's Challenges</h1>
-        <p>Transforming businesses with cutting-edge cloud technologies.</p>
-        <a href="#services" class="btn">Explore Services</a>
+        <div class="hero-text">
+            <h1>transform</h1>
+            <h1>your business</h1>
+            <h4>with cutting-edge digital innovation </h4>
+        </div>
+        <div class="logos">
+            <p>Trusted by Leading Companies Worldwide</p>
+            <div class="logo-carousel">
+                <div class="logo-track">
+                    <img src="assets/brands/aspire.png" alt="Aspire">
+                    <img src="assets/brands/BMO.png" alt="BMO">
+                    <img src="assets/brands/samtec.png" alt="Samtec">
+                    <img src="assets/brands/volkswagen.png" alt="Volkswagen">
+                    <img src="assets/brands/ford.png" alt="Ford">
+                    <img src="assets/brands/experian.png" alt="Experian">
+                    <img src="assets/brands/ricoh.png" alt="Ricoh">
+                    <img src="assets/brands/Property.png" alt="Property">
+
+
+                    <img src="assets/brands/aspire.png" alt="Aspire">
+                    <img src="assets/brands/BMO.png" alt="BMO">
+                    <img src="assets/brands/samtec.png" alt="Samtec">
+                    <img src="assets/brands/volkswagen.png" alt="Volkswagen">
+                    <img src="assets/brands/ford.png" alt="Ford">
+                    <img src="assets/brands/experian.png" alt="Experian">
+                    <img src="assets/brands/ricoh.png" alt="Ricoh">
+                    <img src="assets/brands/Property.png" alt="Property">
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- About Us Section -->
 <section id="about" class="about">
     <div class="container">
-        <h2>About Us</h2>
-        <p>Horus Technologies is a leading AWS consulting firm, founded by former AWS engineers with expertise in <strong>Generative AI</strong>, <strong>Machine Learning</strong>, and <strong>Spatial Computing</strong>. We help businesses transform and scale using the power of cloud technology, enabling them to thrive in a rapidly evolving digital landscape.</p>
+<!--    <div class="about-text">
+        <h2>What We Do</h2>
+        <p>Our technologists, strategists, and designers create powerful digital experiences worldwide, solving our customers' toughest challenges</p>
+    </div>
+    <div class="about-cards">
+        <div>
+            <div class="card" >
+                <h3>AWS Consulting
+                    & Cloud Expertise</h3>
+                <p>
+                    As a leading AWS consulting firm, we provide deep cloud expertise to help businesses optimise, scale, and innovate
+                </p>
+            </div>
+            <div class="card" >
+                <h3>Business Transformation
+                    & Scalability</h3>
+                <p>
+                    Don’t keep your users waiting. Solana has block times of 400 milliseconds — and as hardware gets faster, so will the network.
+                </p>
+            </div>
+        </div>
+
+    </div>-->
     </div>
 </section>
 
 <!-- Our Services Section -->
-<section id="services" class="services">
+<section id="stories" class="stories">
     <div class="container">
-        <h2>Our Services</h2>
-        <div class="service-cards">
-            <div class="card">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <h3>Cloud Migration & Modernization</h3>
-                <p>Seamlessly transition your infrastructure to AWS and modernize your applications for optimal performance.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-robot"></i>
-                <h3>AI & Machine Learning</h3>
-                <p>Leverage AI and ML to automate processes and enhance customer experiences.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-server"></i>
-                <h3>Serverless Architecture</h3>
-                <p>Build scalable and secure applications with serverless technologies.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-map-marked-alt"></i>
-                <h3>Spatial Computing Solutions</h3>
-                <p>Deliver intelligent, location-aware services using geospatial data.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-database"></i>
-                <h3>Data Pipelines & Analytics</h3>
-                <p>Implement data pipelines and analytics solutions to unlock your data’s potential.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Security & Compliance</h3>
-                <p>Ensure your cloud environment meets the highest standards of security and compliance.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Why Horus Technologies Section -->
-<section id="why-us" class="why-us">
-    <div class="container">
-        <h2>Why Horus Technologies?</h2>
-        <p>Our team combines deep AWS expertise with a commitment to innovation and integrity. We deliver solutions that are future-proof and drive tangible business outcomes. Let Horus Technologies be your trusted partner on the journey to cloud success.</p>
     </div>
 </section>
 
 <!-- Contact Us Section -->
 <section id="contact" class="contact">
     <div class="container">
-        <h2>Contact Us</h2>
-        <p>Ready to transform your cloud strategy? Let's connect!</p>
-        <div class="contact-info">
-            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:michael@horustech.dev">michael@horustech.dev</a></p>
-            <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +1 (480) 269-0424</p>
-            <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> San Diego, CA, USA</p>
-        </div>
+
     </div>
 </section>
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <p>&copy; 2024 Horus Technologies - All Rights Reserved</p>
-    </div>
-</footer>
 
 <!-- JavaScript for Responsive Menu -->
 <script>

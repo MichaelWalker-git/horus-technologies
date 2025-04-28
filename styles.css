@@ -6,20 +6,21 @@
 }
 
 body {
-    font-family: 'Open Sans', Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     color: #333;
     line-height: 1.6;
 }
 
 /* Navigation Bar */
 .navbar {
-    background-color: #fff;
     padding: 15px 20px;
-    border-bottom: 1px solid #ddd;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 999;
+    color: rgba(255, 255, 255, 1);
+    text-transform: uppercase;
+    backdrop-filter: blur(14px);
 }
 
 .navbar .container {
@@ -31,8 +32,9 @@ body {
 .navbar .logo {
     font-size: 1.5em;
     font-weight: 700;
-    color: #333;
+    color: rgba(255, 255, 255, 1);
     text-decoration: none;
+    letter-spacing: 3px;
 }
 
 .navbar .nav-links {
@@ -46,13 +48,17 @@ body {
 
 .navbar .nav-links a {
     text-decoration: none;
-    color: #333;
-    font-weight: 600;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 300;
     transition: color 0.3s;
 }
 
 .navbar .nav-links a:hover {
-    color: #4CAF50;
+    background: linear-gradient(90deg, rgba(7, 202, 148, 1), rgba(162, 40, 212, 1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
 }
 
 .menu-toggle {
@@ -65,41 +71,46 @@ body {
     color: #333;
 }
 
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 /* Hero Section */
 .hero {
-    background-image: url('https://s7d9.scene7.com/is/image/slalom/WiP_AI_Solutions_Homepage_Hero?fmt=webp-alpha');
+    background-color: rgba(0, 0, 0, 1);
+    height: 100vh;
+    background-image: url('assets/hero-bg.svg');
     background-size: cover;
     background-position: center;
     color: #fff;
-    padding: 200px 0 150px;
-    text-align: center;
     position: relative;
-    margin-top: 70px;
-}
-
-.hero::after {
-    content: '';
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
 }
 
 .hero .container {
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
 }
 
 .hero h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
+    font-size: 4em;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.hero h4 {
+    margin-top: 20px;
+    font-size: 1.8em;
+    font-weight: 400;
 }
 
 .hero p {
     font-size: 1.2em;
-    margin-bottom: 30px;
 }
 
 .hero .btn {
@@ -116,95 +127,129 @@ body {
     background-color: #45a049;
 }
 
-/* Sections */
-section {
-    padding: 60px 0;
+.logos {
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
 }
 
-section h2 {
+.logos p {
+    text-transform: uppercase;
     text-align: center;
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 40px;
+    color: #47BAAD;
+    margin-bottom: 30px;
+    font-size: 15px;
+    font-weight: 400;
 }
 
-section p {
-    max-width: 800px;
-    margin: 0 auto 20px;
-    text-align: center;
-    font-size: 1.1em;
+.logo-carousel {
+    overflow: hidden;
+}
+
+.logo-track {
+    display: flex;
+    animation: scroll 30s linear infinite;
+}
+
+.logo-track img {
+    margin: 0 20px;
+}
+
+.hero-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+/*About section*/
+.about {
+    background-image: url('assets/about-bg.png');
+    background-size: cover;
+    background-position: center;
+    height: 130vh;
+}
+
+.about .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 39vw;
+}
+
+.about-text h2 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    background: linear-gradient(10deg, #19FB9B, #8C01FA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
 }
 
 .about p {
-    text-align: justify;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Service Cards */
-.service-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.service-cards .card {
-    flex: 1 1 calc(33% - 20px);
-    background-color: #fff;
-    margin: 10px;
-    padding: 30px 20px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.service-cards .card i {
-    font-size: 2em;
-    color: #4CAF50;
-    margin-bottom: 15px;
-}
-
-.service-cards .card h3 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-}
-
-.service-cards .card p {
-    font-size: 1em;
-    color: #666;
-}
-
-/* Contact Info */
-.contact-info p {
     font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-.contact-info i {
-    color: #4CAF50;
-    margin-right: 10px;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-}
-
-footer p {
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: #FFFFFF;
     text-align: center;
 }
 
-/* Responsive Styles */
-@media (max-width: 992px) {
-    .service-cards .card {
-        flex: 1 1 calc(50% - 20px);
-    }
+
+/* Stories Section */
+.stories {
+    background-image: url('assets/stories-bg.svg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+}
+
+.contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/contact-bg.svg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(18px);
+    z-index: 1;
+}
+
+.contact {
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+    height: 100vh;
+}
+
+/* Ensure your content stays above the blurred background */
+.contact > * {
+    position: relative;
+    z-index: 2;
 }
 
 @media (max-width: 768px) {

@@ -372,9 +372,7 @@
     }
 
     nextButton.addEventListener('click', () => {
-        console.log('next', currentSlide);
         currentSlide = (currentSlide + 1) % cards.length;
-        console.log('next', currentSlide);
         updateCarousel();
     });
 

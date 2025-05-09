@@ -668,3 +668,117 @@ body {
     display: flex;
     gap: 28px;
 }
+
+
+/*responsive rules*/
+@media (max-width: 768px) {
+    .hero {
+        padding: 100px 20px 60px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero h4 {
+        font-size: 1.2em;
+    }
+
+    .logos {
+        position: static;
+        margin-top: 40px;
+    }
+
+    .about {
+        height: auto;
+        padding: 60px 20px;
+    }
+
+    .about .container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-text, .stories-text, .contact-text {
+        width: 100%;
+    }
+
+    .about-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-cards > div:nth-child(2) {
+        margin-top: 0;
+    }
+
+    .about .card {
+        width: 100%;
+    }
+
+    .stories {
+        height: auto !important;
+        padding: 40px 20px;
+    }
+
+    .stories .container {
+        height: auto !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .carousel-card {
+        flex-direction: column;
+        padding: 16px;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .carousel-content, .carousel-image {
+        width: 100%;
+    }
+
+    .carousel-controls {
+        margin-top: 10px;
+        align-self: center;
+    }
+
+    .contact {
+        height: auto;
+        padding: 60px 20px;
+    }
+
+    .contact-form-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contact-form-container .contact-info {
+        width: 100%;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .submit-btn {
+        justify-content: center;
+    }
+
+    .footer .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .carousel {
+        max-width: 90vw;
+    }
+
+    .navbar .nav-links {
+        width: 100%;
+    }
+}
+

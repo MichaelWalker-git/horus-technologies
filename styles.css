@@ -91,8 +91,7 @@ body {
     height: 100vh;
     background-image: url('assets/hero-bg.svg');
     background-size: contain;
-    background-position-x: right;
-    background-position: center;
+    background-position-x: 168%;
     color: #fff;
     position: relative;
 }
@@ -169,7 +168,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 18%;
+    margin-bottom: 14%;
 }
 
 @keyframes scroll {

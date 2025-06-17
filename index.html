@@ -7,6 +7,9 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
 
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icons/horus-icon.svg" type="image/x-icon">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
@@ -16,7 +19,7 @@
 <header>
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">Horus Technologies</a>
+            <a href="#" class="logo"><img width="52" height="52" src="assets/icons/horus-icon.svg" /> <p>Horus Technologies</p></a>
             <ul class="nav-links">
                 <li><a href="#about">What We Do</a></li>
                 <li><a href="#stories">Our stories</a></li>
@@ -33,9 +36,10 @@
 <section class="hero">
     <div class="container">
         <div class="hero-text">
-            <h1>transform</h1>
-            <h1>your business</h1>
-            <h4>with cutting-edge digital innovation </h4>
+            <h1>Power Your Business</h1>
+            <h1>with Cloud and AI</h1>
+            <h4>From strategy to implementation — we build
+            <br>scalable, intelligent solutions that drive results</h4>
         </div>
         <div class="logos">
             <p>Trusted by Leading Companies Worldwide</p>
@@ -70,7 +74,7 @@
     <div class="container">
         <div class="about-text">
             <h2 class="section-header">What We Do</h2>
-            <p>Our technologists, strategists, and designers create powerful digital experiences worldwide, solving our
+            <p>Our technologists, strategists, and designers create powerful digital experiences <br/> worldwide, solving our
                 customers' toughest challenges</p>
         </div>
         <div class="about-cards">
@@ -126,16 +130,15 @@
 
 <!-- Our Services Section -->
 <section id="stories" class="stories">
-    <div class="container">
+    <div class="stories-container">
         <div class="stories-text">
             <h2 class="section-header">Explore our stories and insights</h2>
             <p>Inspire bold ideas, accelerate progress, and create a better future for everyone</p>
         </div>
         <div class="stories-cards">
             <div class="carousel">
-                <div class="carousel-track">
+                <div class="carousel-track" id="carousel-track">
                     <div class="carousel-card active">
-                        <img src="assets/stories/ricon.jpg" alt="Ricoh" class="carousel-image">
                         <div class="carousel-content">
                             <div class="card-header">
                                 <img src="assets/brands/ricoh.png" alt="Ricoh">
@@ -147,7 +150,6 @@
                     </div>
 
                     <div class="carousel-card">
-                        <img src="assets/stories/porsche.jpg" alt="Porsche" class="carousel-image">
                         <div class="carousel-content">
                             <div class="card-header">
                                 <img src="assets/brands/Porsche.png" alt="Porsche">
@@ -159,7 +161,6 @@
                     </div>
 
                     <div class="carousel-card">
-                        <img src="assets/stories/degree-data.jpg" alt="Degree Data" class="carousel-image">
                         <div class="carousel-content">
                             <div class="card-header">
                                 <img src="assets/brands/Degreedata.png" alt="Degree Data">
@@ -171,7 +172,6 @@
                     </div>
 
                     <div class="carousel-card">
-                        <img src="assets/stories/ford.jpg" alt="Ford" class="carousel-image">
                         <div class="carousel-content">
                             <div class="card-header">
                                 <img src="assets/brands/ford.png" alt="Ford">
@@ -183,7 +183,6 @@
                     </div>
 
                     <div class="carousel-card">
-                        <img src="assets/stories/bmo.jpg" alt="BMO" class="carousel-image">
                         <div class="carousel-content">
                             <div class="card-header">
                                 <img src="assets/brands/BMO.png" alt="BMO">
@@ -195,7 +194,6 @@
                     </div>
 
                     <div class="carousel-card">
-                        <img src="assets/stories/property.jpg" alt="Property" class="carousel-image">
                         <div class="carousel-content">
                             <div class="card-header">
                                 <img src="assets/brands/Property.png" alt="Property">
@@ -207,7 +205,6 @@
                     </div>
 
                     <div class="carousel-card">
-                        <img src="assets/stories/experian.jpg" alt="Experian" class="carousel-image">
                         <div class="carousel-content">
                             <div class="card-header">
                                 <img src="assets/brands/experian.png" alt="Experian">
@@ -219,7 +216,6 @@
                     </div>
 
                     <div class="carousel-card">
-                        <img src="assets/stories/aspire.jpg" alt="Aspire" class="carousel-image">
                         <div class="carousel-content">
                             <div class="card-header">
                                 <img src="assets/brands/aspire.png" alt="Aspire">
@@ -231,7 +227,6 @@
                     </div>
 
                     <div class="carousel-card">
-                        <img src="assets/stories/samtec.jpg" alt="Samtec" class="carousel-image">
                         <div class="carousel-content">
                             <div class="card-header">
                                 <img src="assets/brands/samtec.png" alt="Samtec">
@@ -245,7 +240,6 @@
                 </div>
 
                 <div class="carousel-controls">
-                    <div class="carousel-dots"></div>
                     <div class="button-group">
                         <button class="prev">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8l8 8l1.41-1.41L7.83 13H20z"/></svg>
@@ -257,10 +251,11 @@
                         </button>
                     </div>
                 </div>
+                </div>
+
 
             </div>
         </div>
-    </div>
 </section>
 
 <!-- Contact Us Section -->
@@ -288,17 +283,14 @@
             <form id="contact-form" class="contact-form">
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" name="fullName" required />
+                        <input type="text" id="fullName" name="fullName" required placeholder="Full Name" />
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required />
+                        <input type="email" id="email" name="email" required placeholder="Email" />
                     </div>
                 </div>
                 <div class="form-group full">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <textarea id="message" name="message" rows="5" required placeholder="Message"></textarea>
                 </div>
                 <div class="submit-btn">
                     <button type="submit">SEND</button>
@@ -346,49 +338,6 @@
     });
 </script>
 
-
-<script>
-    const track = document.querySelector('.carousel-track');
-    const cards = Array.from(track.children);
-    const nextButton = document.querySelector('.next');
-    const prevButton = document.querySelector('.prev');
-    const dotsNav = document.querySelector('.carousel-dots');
-
-    let currentSlide = 0;
-
-    // Create dots
-    cards.forEach((_, index) => {
-        const button = document.createElement('button');
-        if (index === 0) button.classList.add('active');
-        dotsNav.appendChild(button);
-    });
-
-    const dots = Array.from(dotsNav.children);
-
-    function updateCarousel() {
-        track.style.transform = `translateX(-${currentSlide * 100}%)`;
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[currentSlide].classList.add('active');
-    }
-
-    nextButton.addEventListener('click', () => {
-        currentSlide = (currentSlide + 1) % cards.length;
-        updateCarousel();
-    });
-
-    prevButton.addEventListener('click', () => {
-        currentSlide = (currentSlide - 1 + cards.length) % cards.length;
-        updateCarousel();
-    });
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentSlide = index;
-            updateCarousel();
-        });
-    });
-</script>
-
 <script>
     document.getElementById('contact-form').addEventListener('submit', function (e) {
         e.preventDefault();
@@ -405,6 +354,22 @@
         const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`;
 
         window.open(gmailUrl, '_blank')
+    });
+</script>
+
+<script>
+    const track = document.getElementById('carousel-track');
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+
+    const scrollAmount = 500; // pixels per click
+
+    nextBtn.addEventListener('click', () => {
+        track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    prevBtn.addEventListener('click', () => {
+        track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     });
 </script>
 

@@ -30,12 +30,20 @@ body {
 }
 
 .navbar .logo {
-    font-size: 1.5em;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+
+}
+
+.navbar .logo p {
+    font-size: 1em;
+    font-weight: 700;
     letter-spacing: 3px;
 }
+
 
 .navbar .nav-links {
     list-style: none;
@@ -73,7 +81,7 @@ body {
 
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -82,7 +90,8 @@ body {
     background-color: rgba(0, 0, 0, 1);
     height: 100vh;
     background-image: url('assets/hero-bg.svg');
-    background-size: cover;
+    background-size: contain;
+    background-position-x: right;
     background-position: center;
     color: #fff;
     position: relative;
@@ -105,7 +114,7 @@ body {
 
 .hero h4 {
     margin-top: 20px;
-    font-size: 1.8em;
+    font-size: 2em;
     font-weight: 400;
 }
 
@@ -160,7 +169,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    margin-bottom: 18%;
 }
 
 @keyframes scroll {
@@ -215,7 +224,7 @@ body {
     font-weight: 300;
     margin-bottom: 20px;
     color:  #C4C4C4;
-    text-align: center;
+    text-align: left;
 }
 
 .about-cards {
@@ -273,15 +282,15 @@ body {
     background-image: url('assets/stories-bg.svg');
     background-size: cover;
     background-position: center;
-    height: 70vh;
+    height: 80vh;
 }
 
-.stories .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+.stories-container {
+    padding-top: 180px ;
+}
+
+.stories .section-header {
+    margin-bottom: 0;
 }
 
 .stories-text {
@@ -289,8 +298,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 39vw;
-    gap: 10px;
+    margin-bottom: 70px;
 }
 
 .stories-text p {
@@ -298,9 +306,6 @@ body {
     font-weight: 300;
     font-size: 18px;
 }
-
-
-
 
 /* Contact Section */
 .contact::before {
@@ -398,23 +403,26 @@ body {
     }
 }
 
-/* Carousel Styles */
 .carousel {
     position: relative;
     width: 100%;
     overflow: hidden;
     margin-top: 40px;
-    max-width: 70vw;
 }
 
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease;
+    gap: 28px;
+    overflow-x: auto;           /* Enable horizontal scroll */
+    overflow-x: auto;           /* Enable horizontal scroll */
+    scroll-behavior: smooth;    /* Smooth scroll */
+    -ms-overflow-style: none;   /* Hide scrollbar in IE and Edge */
+    scrollbar-width: none;      /* Hide scrollbar in Firefox */
+    margin-bottom: 80px;
 }
 
 .carousel-card {
-    flex: 0 0 100%;
-    max-width: 100%;
     display: flex;
     gap: 60px;
     background: rgba(255, 255, 255, 0.05);
@@ -422,16 +430,11 @@ body {
     border-radius: 12px;
     align-items: center;
     height: fit-content;
-}
-
-.carousel-image {
-    width: 40%;
-    border-radius: 8px;
-    object-fit: cover;
+    padding: 16px;
+    min-width: 30%;
 }
 
 .carousel-content {
-    width: 50%;
     color: white;
     display: flex;
     flex-direction: column;
@@ -475,10 +478,13 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+    padding: 0 14%;
 }
 
 .carousel-controls .button-group {
+    justify-content: space-between;
     display: flex;
+    width: 100%;
     gap: 8px;
 }
 
@@ -675,6 +681,7 @@ body {
     .hero {
         padding: 100px 20px 60px;
         text-align: center;
+        background-size: cover;
     }
 
     .hero h1 {
@@ -718,31 +725,62 @@ body {
     }
 
     .stories {
-        height: auto !important;
-        padding: 40px 20px;
+        height: auto;
+        padding: 60px 20px;
     }
 
-    .stories .container {
-        height: auto !important;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .stories-container {
+        padding-top: 100px;
+    }
+
+    .carousel {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .carousel-track {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 20px;
     }
 
     .carousel-card {
+        flex: 0 0 80%;
+        min-width: 80%;
+        max-width: 90%;
+        scroll-snap-align: center;
         flex-direction: column;
-        padding: 16px;
-        gap: 16px;
-        width: 100%;
-    }
-
-    .carousel-content, .carousel-image {
-        width: 100%;
+        gap: 20px;
+        padding: 20px;
+        margin-right: 16px;
     }
 
     .carousel-controls {
+        padding: 0;
         margin-top: 10px;
-        align-self: center;
+        justify-content: center;
+    }
+
+    .carousel-controls button {
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .carousel-content p {
+        font-size: 14px;
+    }
+
+    .carousel-content .category {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+
+    .carousel-content h3 {
+        font-size: 20px;
     }
 
     .contact {

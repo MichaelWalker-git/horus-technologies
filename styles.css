@@ -285,7 +285,7 @@ body {
 }
 
 .stories-container {
-    padding-top: 180px ;
+    padding-top: 16vh ;
 }
 
 .stories .section-header {
@@ -418,7 +418,6 @@ body {
     scroll-behavior: smooth;    /* Smooth scroll */
     -ms-overflow-style: none;   /* Hide scrollbar in IE and Edge */
     scrollbar-width: none;      /* Hide scrollbar in Firefox */
-    margin-bottom: 80px;
 }
 
 .carousel-card {
@@ -819,3 +818,12 @@ body {
     }
 }
 
+@media (max-height: 800px) {
+    .stories-text {
+        margin-bottom: 0;
+    }
+
+    .stories-container {
+        padding-top: 5%;
+    }
+}

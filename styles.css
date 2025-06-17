@@ -820,7 +820,13 @@ body {
 
 @media (max-width: 900px) {
     .carousel-card {
-        max-width: 400px;
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 1400px) and (min-width: 900px) {
+    .carousel-card {
+        min-width: 50%;
     }
 }
 

@@ -746,8 +746,8 @@ body {
 
     .carousel-card {
         flex: 0 0 80%;
-        min-width: 80%;
-        max-width: 90%;
+        min-width: 100%;
+        max-width: 100%;
         scroll-snap-align: center;
         flex-direction: column;
         gap: 20px;
@@ -818,12 +818,23 @@ body {
     }
 }
 
-@media (max-height: 800px) {
+@media (max-width: 900px) {
+    .carousel-card {
+        max-width: 400px;
+    }
+}
+
+@media (max-height: 900px) {
     .stories-text {
         margin-bottom: 0;
     }
 
     .stories-container {
-        padding-top: 5%;
+        padding-top: 8vh;
+    }
+
+    .carousel-content {
+        max-height: 400px;
+        overflow-y: auto;
     }
 }

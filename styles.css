@@ -91,6 +91,7 @@ body {
     height: 100vh;
     background-image: url('assets/hero-bg.svg');
     background-size: contain;
+    background-repeat: no-repeat;
     background-position-x: 168%;
     color: #fff;
     position: relative;
@@ -281,7 +282,7 @@ body {
     background-image: url('assets/stories-bg.svg');
     background-size: cover;
     background-position: center;
-    height: 80vh;
+    height: 90vh;
 }
 
 .stories-container {
@@ -830,7 +831,17 @@ body {
     }
 }
 
-@media (max-height: 900px) {
+@media (max-height: 800px) {
+    .carousel-card {
+        min-width: 50%;
+    }
+}
+
+@media (max-height: 800px) {
+    .carousel-card {
+        min-width: 40%;
+    }
+
     .stories-text {
         margin-bottom: 0;
     }

@@ -656,6 +656,28 @@ body {
     font-weight: 300;
 }
 
+.legal-links {
+    margin-top: 15px;
+}
+
+.legal-links a {
+    color: #848895;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+    color: #19FB9B;
+}
+
+.legal-links span {
+    color: #848895;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
 .footer .icons a {
     text-decoration: none;
 }

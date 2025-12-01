@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transforming College Catalog Data with AWS Generative AI - Horus Technologies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case study: How we helped an education data provider transform college catalog PDFs into structured course data using AWS Generative AI, reducing processing time from days to hours">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/icons/horus-icon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Navigation Bar -->
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo"><img width="52" height="52" src="../assets/icons/horus-icon.svg" /> <p>Horus Technologies</p></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">What We Do</a></li>
+                <li><a href="../index.html#stories">Our stories</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Blog Post Content -->
+<section class="blog-post-hero">
+    <div class="container">
+        <a href="blog.html" class="blog-back-link">← Back to Blog</a>
+        <div class="blog-post-meta">
+            <span class="blog-post-category">Case Study</span>
+            <span class="blog-post-date">June 2025</span>
+        </div>
+        <h1 class="blog-post-title">Transforming College Catalog Data with AWS Generative AI</h1>
+        <div class="blog-post-hero-image">
+            <img src="../assets/blog-images/college-catalog-hero.png" alt="Document processing workflow with AI, AWS, and data analytics" onerror="this.style.display='none'" />
+        </div>
+    </div>
+</section>
+
+<section class="blog-post-content">
+    <div class="container">
+        <article class="blog-post-article">
+            <p class="blog-post-lead">How Horus Technologies helps education data providers move from PDFs to trusted course data</p>
+
+            <h2>About the project</h2>
+            
+            <p>Horus Technologies partnered with an education data provider that works with thousands of accredited institutions and large academic data platforms. Their business depends on one thing: accurate, up-to-date course data that can be compared across schools and programs.</p>
+            
+            <p>Every year they process hundreds of college catalogs. Each catalog contains hundreds or even thousands of courses, all formatted differently, using different credit systems and prerequisite styles. This information powers downstream products such as search, analytics, and transfer-credit evaluation — where errors directly affect students' time, money, and graduation plans.</p>
+
+            <h2>The challenge</h2>
+            
+            <p>Our customer came to Horus Technologies with several connected problems:</p>
+            
+            <ul class="blog-list">
+                <li><strong>Catalogs were slow to process.</strong> Turning a single catalog PDF into structured data could take several days of manual work and scattered scripts.</li>
+                <li><strong>Formats were wildly inconsistent.</strong> Course numbers, credits, and prerequisites were written in many different ways across institutions and catalog editions.</li>
+                <li><strong>Accuracy was critical.</strong> Small mistakes in course fields could lead to incorrect transfer-credit decisions and frustrated students.</li>
+                <li><strong>Demand was growing.</strong> As the number of partner institutions increased, the existing approach could not keep up without adding more staff.</li>
+            </ul>
+            
+            <p>They needed a way to dramatically accelerate catalog processing while keeping or improving expert-level quality.</p>
+
+            <h2>Why AWS</h2>
+            
+            <p>To meet these requirements, Horus Technologies and the customer chose to build the new solution on Amazon Web Services (AWS).</p>
+            
+            <p>We use:</p>
+            
+            <ul class="blog-list">
+                <li>AWS generative AI services to understand and structure complex catalog content.</li>
+                <li>AWS managed data services to store, secure, and serve course information to downstream applications.</li>
+                <li>Serverless and fully managed components to scale automatically with workload and keep operational overhead low.</li>
+            </ul>
+            
+            <p>By relying on AWS as the core platform, the customer gets a solution that is secure, compliant, and ready to grow with their business rather than a one-off custom script that is hard to maintain.</p>
+
+            <h2>What Horus Technologies delivered</h2>
+            
+            <p>Working together with the customer, Horus Technologies designed and implemented a production-grade course data platform on AWS that:</p>
+            
+            <ul class="blog-list">
+                <li>Ingests large volumes of catalog files from higher-education institutions.</li>
+                <li>Uses generative AI on AWS to extract and normalize key fields such as subject, course number, title, credits, and prerequisites.</li>
+                <li>Enforces strict validation rules so that only clean, consistent records move forward.</li>
+                <li>Publishes structured course data through APIs, allowing internal tools and partner systems to integrate it quickly.</li>
+            </ul>
+            
+            <p>All of this is backed by AWS services that provide encryption, identity and access management, monitoring, and auditability as standard capabilities.</p>
+
+            <h2>AWS services used in this project</h2>
+            
+            <p>The solution is built entirely on AWS and leverages several managed services:</p>
+            
+            <ul class="blog-list">
+                <li><strong>Amazon Bedrock</strong> – for applying generative AI to complex catalog documents and producing structured course information.</li>
+                <li><strong>AWS Lambda</strong> – for serverless processing tasks that react to new catalogs and orchestrate data preparation steps.</li>
+                <li><strong>AWS Step Functions</strong> – for coordinating multi-step workflows and keeping long-running processes reliable and traceable.</li>
+                <li><strong>Amazon S3</strong> – for durable storage of source catalogs and derived data artifacts, with encryption and lifecycle policies.</li>
+                <li><strong>Amazon DynamoDB</strong> – for fast, scalable access to course records and other frequently queried data.</li>
+                <li><strong>Amazon RDS / Amazon Aurora (MySQL-compatible)</strong> – for relational data that requires strong consistency and reporting.</li>
+                <li><strong>Amazon API Gateway</strong> – for exposing secure, versioned APIs that allow internal tools and partners to consume course data.</li>
+                <li><strong>AWS Identity and Access Management (IAM)</strong> – for enforcing least-privilege access across all components.</li>
+                <li><strong>AWS Secrets Manager</strong> – for securely storing and rotating credentials and configuration secrets.</li>
+                <li><strong>Amazon CloudWatch</strong> – for centralized logging, metrics, and alerts that keep the platform observable and support operations.</li>
+            </ul>
+            
+            <p>These managed services give the customer a modern, cloud-native platform without having to build and operate low-level infrastructure themselves.</p>
+
+            <h2>Business impact</h2>
+            
+            <p>After going live on AWS, the customer saw a step change in how they work with course data:</p>
+            
+            <ul class="blog-list">
+                <li><strong>From days to hours.</strong> End-to-end processing time per catalog dropped from multiple days of manual effort to hours, with same-day turnaround now achievable for most catalogs.</li>
+                <li><strong>Consistent, high-quality data.</strong> Course fields now meet strict internal accuracy targets, reducing rework and issues discovered later in the process.</li>
+                <li><strong>Lower manual workload.</strong> Experts focus on quality assurance and edge cases instead of repetitive data entry, without needing to grow the team at the same pace as catalog volume.</li>
+                <li><strong>Better visibility and control.</strong> Built-in monitoring and metrics on AWS make it easy to track processing performance, spot problems early, and continuously improve.</li>
+            </ul>
+            
+            <p>For the customer, this means faster delivery of catalog updates to their own clients, more reliable data products, and a platform that can scale as they add more institutions and services.</p>
+
+            <h2>How Horus Technologies and AWS can help you</h2>
+            
+            <p>This project shows how Horus Technologies combines domain expertise in complex document workflows with AWS generative AI and cloud services to solve real business problems:</p>
+            
+            <ul class="blog-list">
+                <li>Large volumes of heterogeneous documents</li>
+                <li>Strict accuracy and compliance requirements</li>
+                <li>Need for scalable, API-driven access to structured data</li>
+            </ul>
+            
+            <p>If your organization is dealing with similar challenges — whether in education, healthcare, finance, or another data-heavy domain — Horus Technologies can help you design and implement a solution built on AWS and generative AI that fits your specific needs.</p>
+
+            <div class="blog-post-footer">
+                <a href="../index.html#contact" class="blog-cta-button">Get in Touch</a>
+                <a href="blog.html" class="blog-back-link-bottom">← Back to Blog</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="container">
+        <div class="footer-text">
+            <h2>Horus Technology</h2>
+            <p>© 2025 Horus Technology. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="../privacy.html">Privacy Policy</a>
+                <span>|</span>
+                <a href="../terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="icons">
+            <a href="https://horustech.dev/" target="_blank">
+                <img src="../assets/brands/youtube.svg" alt="YouTube">
+            </a>
+            <a href="https://horustech.dev/" target="_blank">
+                <img src="../assets/brands/snapchat.svg" alt="Snapchat">
+            </a>
+            <a href="https://horustech.dev/" target="_blank">
+                <img src="../assets/brands/instagram.svg" alt="Instagram">
+            </a>
+            <a href="https://horustech.dev/" target="_blank">
+                <img src="../assets/brands/facebook.svg" alt="Facebook">
+            </a>
+            <a href="https://horustech.dev/" target="_blank">
+                <img src="../assets/brands/twitter.svg" alt="Twitter">
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript for Responsive Menu -->
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-menu');
+    });
+</script>
+
+</body>
+</html>
+

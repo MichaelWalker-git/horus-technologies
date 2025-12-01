@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accelerating Contract Review with AWS Generative AI - Horus Technologies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case study: How we built a contract-intelligence platform on AWS using Generative AI to reduce contract review time from hours to minutes without increasing headcount">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/icons/horus-icon.svg" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Navigation Bar -->
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo"><img width="52" height="52" src="../assets/icons/horus-icon.svg" /> <p>Horus Technologies</p></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">What We Do</a></li>
+                <li><a href="../index.html#stories">Our stories</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Blog Post Content -->
+<section class="blog-post-hero">
+    <div class="container">
+        <a href="blog.html" class="blog-back-link">← Back to Blog</a>
+        <div class="blog-post-meta">
+            <span class="blog-post-category">Case Study</span>
+            <span class="blog-post-date">August 2025</span>
+        </div>
+        <h1 class="blog-post-title">Accelerating Contract Review with AWS Generative AI</h1>
+        <div class="blog-post-hero-image">
+            <img src="../assets/blog-images/contract-review-hero.png" alt="Contract review workflow with isometric document and AI analytics" onerror="this.style.display='none'" />
+        </div>
+    </div>
+</section>
+
+<section class="blog-post-content">
+    <div class="container">
+        <article class="blog-post-article">
+            <p class="blog-post-lead">How Horus Technologies built a contract-intelligence platform on AWS without increasing headcount</p>
+
+            <h2>Business context</h2>
+            
+            <p>Horus Technologies partnered with an organization that manages a large portfolio of software and service contracts. Each renewal season, their legal and procurement teams had to review piles of order forms, SKUs, discounts, terms, and renewal clauses.</p>
+            
+            <p>The pain points were familiar:</p>
+            
+            <ul class="blog-list">
+                <li><strong>Slow reviews</strong> – A single complex contract could take a couple of hours to analyze end-to-end.</li>
+                <li><strong>High stakes</strong> – Small mistakes in quantities, discounts, or term dates could lead to overpayment or missed savings opportunities.</li>
+                <li><strong>Growing volume</strong> – As the business expanded, the number of contracts increased, but the review team did not.</li>
+                <li><strong>Limited visibility</strong> – Data ended up in scattered spreadsheets, making it hard to see portfolio-wide pricing patterns or exceptions.</li>
+            </ul>
+            
+            <p>The customer wanted to use generative AI to speed up contract reviews, but with strict requirements around accuracy, explainability, and security.</p>
+
+            <h2>Project goals</h2>
+            
+            <p>Together we defined a set of business and technical objectives:</p>
+            
+            <h3>Business goals</h3>
+            <ul class="blog-list">
+                <li>Cut review time from hours to minutes per contract, especially during renewal waves.</li>
+                <li>Reach high validated accuracy on key commercial and legal fields so analysts can trust the output.</li>
+                <li>Help teams spot inconsistent pricing and terms across vendors and contracts.</li>
+                <li>Increase throughput by an order of magnitude without adding headcount.</li>
+                <li>Provide auditable, source-grounded evidence for internal approvals and vendor negotiations.</li>
+            </ul>
+            
+            <h3>Technical goals</h3>
+            <ul class="blog-list">
+                <li>Run everything in a secure, multi-tenant AWS environment with clear data isolation.</li>
+                <li>Use AWS generative AI services to extract and structure information from contract PDFs and similar documents.</li>
+                <li>Offer a simple web UI and APIs so analysts can upload contracts, monitor processing, and download structured results.</li>
+                <li>Implement monitoring and basic KPIs (latency, success rate, cost per contract) to continually optimize the platform.</li>
+            </ul>
+
+            <h2>High-level solution</h2>
+            
+            <p>Horus Technologies implemented a contract-intelligence platform on AWS that:</p>
+            
+            <ul class="blog-list">
+                <li>Accepts contract files through a browser or API.</li>
+                <li>Stores documents securely and triggers an automated review workflow.</li>
+                <li>Uses generative AI on AWS to extract important fields and line items from contracts.</li>
+                <li>Validates and structures the data into a consistent schema stored in a relational database.</li>
+                <li>Generates downloadable reports (for example, spreadsheets) that analysts can use for review, approvals, and negotiations.</li>
+                <li>Keeps a full link back to the original text, so every extracted value can be checked against the source document.</li>
+            </ul>
+            
+            <p>All processing happens inside the customer's AWS account, using managed services and short-lived credentials. The platform is designed so that if a document fails automated checks, it is clearly flagged for manual review rather than silently accepted.</p>
+
+            <h2>AWS services used in this project</h2>
+            
+            <p>To keep operations lean and security strong, Horus Technologies built the solution using fully-managed AWS services:</p>
+            
+            <ul class="blog-list">
+                <li><strong>Amazon CloudFront & Amazon S3</strong> – Deliver the single-page web application over HTTPS and store contract files and generated reports.</li>
+                <li><strong>Amazon API Gateway</strong> – Provides REST APIs for uploading documents, checking status, and downloading results.</li>
+                <li><strong>AWS Lambda</strong> – Implements stateless functions for API handling, contract processing steps, and export generation.</li>
+                <li><strong>AWS Step Functions</strong> – Orchestrates the end-to-end review workflow for each document or batch of documents.</li>
+                <li><strong>Amazon Bedrock</strong> – Supplies foundation models used to interpret contract content and return structured data.</li>
+                <li><strong>Amazon RDS for PostgreSQL</strong> – Stores normalized contract data, line items, and review metadata in a relational schema.</li>
+                <li><strong>Amazon Cognito</strong> – Manages user authentication and integrates with identity providers as needed.</li>
+                <li><strong>AWS Secrets Manager</strong> – Secures database credentials and other sensitive configuration.</li>
+                <li><strong>Amazon CloudWatch</strong> – Collects logs and metrics and powers alerts on errors, latency, and other health signals.</li>
+                <li><strong>AWS Identity and Access Management (IAM)</strong> – Enforces least-privilege access to services and data.</li>
+            </ul>
+            
+            <p>This stack avoids custom infrastructure and keeps the platform portable to other AWS accounts or regions.</p>
+
+            <h2>What Horus Technologies delivered</h2>
+            
+            <p>Within this project, Horus Technologies delivered a production-ready platform that:</p>
+            
+            <ul class="blog-list">
+                <li>Handles both single and bulk uploads of contracts through a web interface or automated systems.</li>
+                <li>Processes contracts in minutes, returning structured fields and itemized pricing data for analyst review.</li>
+                <li>Surfaces inconsistencies and exceptions (for example, unusual prices or terms) so teams know where to focus.</li>
+                <li>Provides downloadable, review-friendly outputs that plug into the customer's existing workflows.</li>
+                <li>Operates with transparent logging and status tracking, so operations teams can see what is happening at each step.</li>
+            </ul>
+            
+            <p>All of this is built using patterns that can be adapted for other domains where high-risk documents need to be read, summarized, and checked quickly.</p>
+
+            <h2>Business impact</h2>
+            
+            <p>The customer has reported significant improvements:</p>
+            
+            <ul class="blog-list">
+                <li>Review time per contract has dropped from hours to a small number of minutes of analyst effort.</li>
+                <li>Teams can handle significantly more contracts per month without additional hiring.</li>
+                <li>The platform helps identify potential overpayments and inconsistent terms earlier in the renewal cycle.</li>
+                <li>The combination of AI plus clear source links has improved trust between procurement, legal, and finance teams.</li>
+            </ul>
+            
+            <p>Instead of replacing people, the system lets experts focus on judgment and negotiation, with repetitive extraction and structuring work handled by AWS-backed automation.</p>
+
+            <h2>How this approach can be reused</h2>
+            
+            <p>The same pattern can be applied to other high-value document workflows:</p>
+            
+            <ul class="blog-list">
+                <li>Vendor agreements and SOWs</li>
+                <li>Insurance policies</li>
+                <li>Healthcare or financial compliance documents</li>
+                <li>Complex technical appendices that need standardization</li>
+            </ul>
+            
+            <p>If your organization is dealing with time-consuming contract or document reviews and wants to explore secure, explainable generative AI on AWS, Horus Technologies can help design a solution that fits your governance and risk requirements—without exposing your business logic or competitive advantages.</p>
+
+            <div class="blog-post-footer">
+                <a href="../index.html#contact" class="blog-cta-button">Get in Touch</a>
+                <a href="blog.html" class="blog-back-link-bottom">← Back to Blog</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="container">
+        <div class="footer-text">
+            <h2>Horus Technology</h2>
+            <p>© 2025 Horus Technology. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="../privacy.html">Privacy Policy</a>
+                <span>|</span>
+                <a href="../terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="icons">
+            <a href="https://horustech.dev/" target="_blank">
+                <img src="../assets/brands/youtube.svg" alt="YouTube">
+            </a>
+            <a href="https://horustech.dev/" target="_blank">
+                <img src="../assets/brands/snapchat.svg" alt="Snapchat">
+            </a>
+            <a href="https://horustech.dev/" target="_blank">
+                <img src="../assets/brands/instagram.svg" alt="Instagram">
+            </a>
+            <a href="https://horustech.dev/" target="_blank">
+                <img src="../assets/brands/facebook.svg" alt="Facebook">
+            </a>
+            <a href="https://horustech.dev/" target="_blank">
+                <img src="../assets/brands/twitter.svg" alt="Twitter">
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript for Responsive Menu -->
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-menu');
+    });
+</script>
+
+</body>
+</html>
+

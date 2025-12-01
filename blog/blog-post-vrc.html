@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accelerating Healthcare Identity Document Processing with Generative AI on AWS - Horus Technologies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case study: How we helped a vital records provider process healthcare documents using AWS Generative AI, reducing turnaround time from days to minutes and achieving 98-99% accuracy">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/icons/horus-icon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Navigation Bar -->
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo"><img width="52" height="52" src="../assets/icons/horus-icon.svg" /> <p>Horus Technologies</p></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">What We Do</a></li>
+                <li><a href="../index.html#stories">Our stories</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Blog Post Content -->
+<section class="blog-post-hero">
+    <div class="container">
+        <a href="blog.html" class="blog-back-link">← Back to Blog</a>
+        <div class="blog-post-meta">
+            <span class="blog-post-category">Case Study</span>
+            <span class="blog-post-date">September 2025</span>
+        </div>
+        <h1 class="blog-post-title">Accelerating Healthcare Identity Document Processing with Generative AI on AWS</h1>
+        <div class="blog-post-hero-image">
+            <img src="../assets/blog-images/healthcare-docs-hero.png" alt="Healthcare document processing with cloud security and data pipeline" onerror="this.style.display='none'" />
+        </div>
+    </div>
+</section>
+
+<section class="blog-post-content">
+    <div class="container">
+        <article class="blog-post-article">
+            <p class="blog-post-lead">Our customer is a leading vital-records processing provider.</p>
+            
+            <p>Their technology underpins vital statistics systems for multiple state health departments, powering services such as:</p>
+            
+            <ul class="blog-list">
+                <li>Birth and death certificate processing</li>
+                <li>Identity verification for public programs</li>
+                <li>Epidemiological and public-health reporting</li>
+            </ul>
+            
+            <p>Every day, their platform handles large volumes of highly sensitive healthcare documents under strict HIPAA and state regulations.</p>
+            
+            <p>To keep up with growing demand after the pandemic, they needed a new way to handle complex, multi-page medical and identity documents faster, more accurately, and at lower cost—without compromising compliance.</p>
+            
+            <p>Working closely with AWS, we helped them build a Generative AI–powered document processing platform on Amazon SageMaker and a fully serverless data plane on AWS. The result: turnaround times dropped from days to minutes, accuracy now reaches 98–99%, and manual effort has been reduced by 60–75%.</p>
+
+            <h2>The challenge: complex healthcare documents at massive scale</h2>
+            
+            <p>Our customer's quality control and identity document workflows sit at the heart of state-level vital records:</p>
+            
+            <ul class="blog-list">
+                <li>Thousands of PDFs per day, often scanned from different systems, resolutions, and layouts</li>
+                <li>Multiple patients and facilities mentioned in a single document</li>
+                <li>Facility names with 10–15 different aliases across state and federal databases</li>
+                <li>Strict 24-hour processing deadlines and HIPAA requirements</li>
+                <li>Heavy, expensive manual adjudication whenever systems couldn't match data automatically</li>
+            </ul>
+            
+            <p>Existing approaches were hitting the wall:</p>
+            
+            <ul class="blog-list">
+                <li>Traditional OCR and rules were brittle across layouts and states.</li>
+                <li>Previous cloud-based pipelines for some workloads could take hours per batch, creating bottlenecks.</li>
+                <li>Third-party OCR services and manual specialists were costing millions of dollars per year.</li>
+            </ul>
+            
+            <p>Without change, they faced:</p>
+            
+            <ul class="blog-list">
+                <li>Unsustainable processing costs</li>
+                <li>Growing risk of SLA breaches and regulatory penalties</li>
+                <li>Inability to onboard new states and programs quickly</li>
+                <li>Competitive pressure from vendors adopting AI-driven automation</li>
+            </ul>
+            
+            <p>They needed a platform that could understand complex healthcare documents like a human reviewer, but run at cloud scale and speed.</p>
+
+            <h2>Why they chose Generative AI on AWS</h2>
+            
+            <p>Together with our customer, we evaluated three main options:</p>
+            
+            <ol class="blog-list">
+                <li>Enhancing the manual process with a more modern document management system</li>
+                <li>Classic OCR + rules and regexes for pattern matching</li>
+                <li>Custom-trained ML models running on self-managed GPU infrastructure</li>
+            </ol>
+            
+            <p>Each option had tradeoffs: high labor cost, poor robustness to layout changes, long MLOps build-out, or significant operational overhead.</p>
+            
+            <p>We ultimately chose Generative AI on AWS because it offered:</p>
+            
+            <ul class="blog-list">
+                <li>Multimodal document understanding with a vision-language model hosted on Amazon SageMaker</li>
+                <li>A fully managed, serverless data plane built on Amazon S3, AWS Lambda, AWS Step Functions, Amazon DynamoDB, and Amazon OpenSearch Service</li>
+                <li>Native security, encryption, and observability aligned with HIPAA and state requirements</li>
+                <li>Rapid time-to-value through Infrastructure as Code with AWS CDK and automated CI/CD</li>
+            </ul>
+            
+            <p>This approach allowed us to focus on prompts, evaluation, and business rules while AWS handled undifferentiated heavy lifting like GPU provisioning, scaling, and multi-AZ resilience.</p>
+
+            <h2>Solution overview: from PDF to trusted data in minutes</h2>
+            
+            <p>At the heart of the solution is a Generative AI pipeline on AWS that turns incoming PDFs into structured, searchable data ready for downstream systems.</p>
+            
+            <h3>1. Secure ingest on AWS</h3>
+            <p>State systems and healthcare partners submit PDFs to Amazon S3, where they are encrypted with AWS Key Management Service (AWS KMS).</p>
+            <p>An Amazon SQS queue buffers work and decouples uploads from processing. A lightweight AWS Lambda function ("start processing") reads from the queue and kicks off an AWS Step Functions state machine.</p>
+            <p><strong>AWS at work:</strong> S3 + SQS + Lambda + Step Functions provide a fully managed, event-driven backbone that absorbs bursts without manual capacity planning.</p>
+            
+            <h3>2. Orchestrated document pipeline with AWS Step Functions</h3>
+            <p>The Step Functions workflow coordinates the full lifecycle:</p>
+            <ul class="blog-list">
+                <li><strong>PDF → JPEG conversion</strong> – pages are split into images and normalized for AI processing.</li>
+                <li><strong>Patient and page analysis</strong> – map states parallelize processing across pages and patient segments.</li>
+                <li><strong>Text Extraction</strong> – each page or patient "chunk" is sent to the Generative AI model.</li>
+                <li><strong>Accuracy calculation & QC scoring</strong> – extracted fields are validated, scored, and prepared for human review where needed.</li>
+            </ul>
+            <p>Every step emits structured logs to Amazon CloudWatch, making it easy to trace a single document from upload to final result.</p>
+            
+            <h3>3. Multimodal Generative AI with Amazon SageMaker</h3>
+            <p>For the AI engine, our customer selected a leading vision-language model hosted on Amazon SageMaker.</p>
+            <p>The model ingests both the image of the page and extracted text, then outputs structured JSON with patient details, facilities, requesters, and key medical fields.</p>
+            <p>Asynchronous inference uses S3 input/output locations to handle heavy workloads without blocking callers.</p>
+            <p>Model metrics like latency and error rates are monitored via CloudWatch and power autoscaling policies.</p>
+            <p>This gives them the sophistication of a cutting-edge multimodal LLM with the reliability of a production-ready managed service.</p>
+            
+            <h3>4. Durable data foundation with DynamoDB and OpenSearch</h3>
+            <p>Once extraction and validation are complete:</p>
+            <ul class="blog-list">
+                <li>Amazon DynamoDB stores file metadata, processing status, and the key patient fields needed for downstream systems and reporting.</li>
+                <li>Amazon OpenSearch Service indexes the full text and selected fields, enabling fast search and reviewer workflows.</li>
+                <li>Final JSON outputs are written back to an encrypted S3 output bucket for audit, reprocessing, or data-lake applications.</li>
+            </ul>
+            <p>All storage is encrypted with AWS KMS, and access is controlled via least-privilege IAM roles.</p>
+            
+            <h3>5. Access, security, and governance</h3>
+            <p>Security is non-negotiable in healthcare. The platform uses a defense-in-depth AWS design:</p>
+            <ul class="blog-list">
+                <li>Amazon Cognito enforces strong authentication and optional MFA for review applications and APIs.</li>
+                <li>All APIs are fronted by Amazon API Gateway with HTTPS/TLS only, request throttling, and detailed access logging.</li>
+                <li>VPC-isolated Lambda and SageMaker endpoints communicate via locked-down security groups and VPC endpoints; no database or search cluster is publicly accessible.</li>
+                <li>AWS CloudTrail and AWS Config provide full audit trails and configuration visibility.</li>
+                <li>Infrastructure is defined with AWS CDK, enforced with cdk-nag security checks, and deployed through a multi-stage CI/CD pipeline (dev → QA → prod).</li>
+            </ul>
+
+            <h2>Key AWS services at the core of the solution</h2>
+            
+            <p>Although we do not publish the full architecture diagram, the platform is built entirely on AWS and relies on the following managed services:</p>
+            
+            <ul class="blog-list">
+                <li><strong>Amazon SageMaker</strong> – Multimodal endpoint for Generative AI document understanding</li>
+                <li><strong>AWS Step Functions</strong> – orchestration of the PDF→JPEG→extraction→accuracy pipeline</li>
+                <li><strong>AWS Lambda</strong> – event-driven processing and micro-tasks</li>
+                <li><strong>Amazon S3</strong> – input, async inference artifacts, and output archives</li>
+                <li><strong>Amazon SQS</strong> – decoupled ingestion and back-pressure handling</li>
+                <li><strong>Amazon DynamoDB</strong> – file metadata and extracted field store</li>
+                <li><strong>Amazon OpenSearch Service</strong> – search and analytics over extracted content</li>
+                <li><strong>Amazon API Gateway & Amazon Cognito</strong> – secure APIs and user authentication</li>
+                <li><strong>AWS KMS, AWS Secrets Manager, AWS IAM, AWS CloudTrail, AWS Config</strong> – encryption, secret management, and governance</li>
+                <li><strong>Amazon CloudWatch</strong> – dashboards, metrics, logs, and alarms for the entire workload</li>
+            </ul>
+            
+            <p>AWS isn't just the hosting environment—it's the engine that powers the entire GenAI application.</p>
+
+            <h2>Business results: days to minutes, at a fraction of the cost</h2>
+            
+            <p>The impact of the new AWS-based platform is clear and measurable.</p>
+            
+            <h3>Turnaround time: days → minutes</h3>
+            <ul class="blog-list">
+                <li><strong>Before:</strong> 1–2 business days per document, with queues and rework.</li>
+                <li><strong>After:</strong>
+                    <ul>
+                        <li>Processing time reduced to minutes</li>
+                        <li>Median time reduced by over 95%</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>This allows them to comfortably meet same-day SLA commitments even under heavy load.</p>
+            
+            <h3>Accuracy and quality: towards 98–99% success</h3>
+            <p>By combining multimodal Generative AI with a reviewer-in-the-loop workflow:</p>
+            <ul class="blog-list">
+                <li>Baseline first-pass accuracy was 70–80% with manual / rules-based extraction.</li>
+                <li>The new solution consistently delivers 98–99% "business success" on key patient, facility, and requester fields.</li>
+                <li>Reviewer corrections have been cut by roughly 50%, freeing experts to focus on edge cases and new document types.</li>
+            </ul>
+            
+            <h3>Cost and scalability: significant savings and increased throughput</h3>
+            <p>Our customer has reduced manual document processing effort by 60–75%, with a corresponding drop in third-party OCR and adjudication costs.</p>
+            <p>The serverless and SageMaker-based design scales to handle significantly higher throughput without proportional headcount increases.</p>
+            <p>Modeling shows strong ROI and a payback period measured in months at current volumes.</p>
+            
+            <p>Behind the scenes, CloudWatch dashboards and KPI standards track:</p>
+            <ul class="blog-list">
+                <li>API 5XX and latency</li>
+                <li>Lambda p95 duration, errors, and throttles</li>
+                <li>Step Functions failures and execution time</li>
+                <li>SageMaker model latency and error rates</li>
+                <li>DynamoDB and OpenSearch health</li>
+            </ul>
+            <p>…ensuring the platform stays within its strict SLAs.</p>
+
+            <h2>Transforming vital-records processing with AWS Generative AI</h2>
+            
+            <p>For our customer, this project is more than a technical upgrade—it's a strategic transformation of how vital records are processed:</p>
+            
+            <ul class="blog-list">
+                <li>Citizens receive faster decisions and responses</li>
+                <li>State health departments gain more timely, accurate data</li>
+                <li>Compliance posture is stronger thanks to consistent encryption, access controls, and audit trails</li>
+                <li>The platform is ready to onboard new states and document types without a complete redesign</li>
+            </ul>
+            
+            <p>Generative AI on AWS turned a labor-heavy cost center into an intelligent, scalable document platform that supports the mission of public health.</p>
+
+            <h2>About Horus Technologies and AWS</h2>
+            
+            <p>Horus Technologies is an AWS-focused software engineering partner specializing in cloud-native, serverless, and Generative AI solutions for regulated industries such as healthcare and government.</p>
+            
+            <p>We design and build production workloads on AWS using services like Amazon SageMaker, Amazon Bedrock, Amazon Textract, AWS Lambda, AWS Step Functions, Amazon DynamoDB, Amazon S3, and Amazon OpenSearch Service.</p>
+            
+            <p>By combining deep AWS expertise with strong delivery practices, we help organizations modernize legacy workflows, automate document-heavy processes, and implement secure, audit-ready platforms that are ready for real-world production at scale.</p>
+
+            <div class="blog-post-footer">
+                <a href="../index.html#contact" class="blog-cta-button">Get in Touch</a>
+                <a href="blog.html" class="blog-back-link-bottom">← Back to Blog</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="container">
+        <div class="footer-text">
+            <h2>Horus Technology</h2>
+            <p>© 2025 Horus Technology. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="../privacy.html">Privacy Policy</a>
+                <span>|</span>
+                <a href="../terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="icons">
+            <a href="https://horustech.dev/" target="_blank">
+                <img src="../assets/brands/youtube.svg" alt="YouTube">
+            </a>
+            <a href="https://horustech.dev/" target="_blank">
+                <img src="../assets/brands/snapchat.svg" alt="Snapchat">
+            </a>
+            <a href="https://horustech.dev/" target="_blank">
+                <img src="../assets/brands/instagram.svg" alt="Instagram">
+            </a>
+            <a href="https://horustech.dev/" target="_blank">
+                <img src="../assets/brands/facebook.svg" alt="Facebook">
+            </a>
+            <a href="https://horustech.dev/" target="_blank">
+                <img src="../assets/brands/twitter.svg" alt="Twitter">
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript for Responsive Menu -->
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-menu');
+    });
+</script>
+
+</body>
+</html>
+

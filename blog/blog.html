@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog - Horus Technologies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read our latest insights on AWS, Generative AI, cloud solutions, and business transformation">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/icons/horus-icon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Navigation Bar -->
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo"><img width="52" height="52" src="../assets/icons/horus-icon.svg" /> <p>Horus Technologies</p></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">What We Do</a></li>
+                <li><a href="../index.html#stories">Our stories</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Blog Hero Section -->
+<section class="blog-hero">
+    <div class="container">
+        <div class="blog-hero-text">
+            <h1>Our Blog</h1>
+            <p>Insights, case studies, and updates on cloud innovation, AI, and business transformation</p>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Posts Section -->
+<section class="blog-posts">
+    <div class="container">
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Case Study</span>
+                        <span class="blog-date">September 2025</span>
+                    </div>
+                    <h2 class="blog-title">Accelerating Healthcare Identity Document Processing with Generative AI on AWS</h2>
+                    <p class="blog-excerpt">Our customer is a leading vital-records processing provider. Working closely with AWS, we helped them build a Generative AI–powered document processing platform that reduces turnaround times from days to minutes, achieving 98–99% accuracy while cutting costs by 60–75%.</p>
+                    <a href="blog-post-vrc.html" class="blog-read-more">Read More →</a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Case Study</span>
+                        <span class="blog-date">August 2025</span>
+                    </div>
+                    <h2 class="blog-title">Accelerating Contract Review with AWS Generative AI</h2>
+                    <p class="blog-excerpt">How Horus Technologies built a contract-intelligence platform on AWS without increasing headcount. The solution reduces contract review time from hours to minutes while maintaining accuracy and security.</p>
+                    <a href="accelerating-contract-review.html" class="blog-read-more">Read More →</a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Case Study</span>
+                        <span class="blog-date">June 2025</span>
+                    </div>
+                    <h2 class="blog-title">Transforming College Catalog Data with AWS Generative AI</h2>
+                    <p class="blog-excerpt">How Horus Technologies helps education data providers move from PDFs to trusted course data. The solution transforms college catalog PDFs into structured course data using AWS Generative AI, reducing processing time from days to hours while maintaining expert-level accuracy.</p>
+                    <a href="transforming-college-catalog-data.html" class="blog-read-more">Read More →</a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Case Study</span>
+                        <span class="blog-date">October 2024</span>
+                    </div>
+                    <h2 class="blog-title">Turning Mailbox Chaos into Structured Insights with Generative AI on AWS</h2>
+                    <p class="blog-excerpt">Manual mail processing doesn't scale. Our customer, a leading virtual mailbox provider, knew this all too well. Together with AWS, we helped them turn this into a fully automated, Generative AI–powered pipeline that processes mail in minutes instead of hours.</p>
+                    <a href="turning-mailbox-chaos.html" class="blog-read-more">Read More →</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="container">
+        <div class="footer-text">
+            <h2>Horus Technology</h2>
+            <p>© 2025 Horus Technology. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="../privacy.html">Privacy Policy</a>
+                <span>|</span>
+                <a href="../terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="icons">
+            <a href="https://horustech.dev/" target="_blank">
+                <img src="../assets/brands/youtube.svg" alt="YouTube">
+            </a>
+            <a href="https://horustech.dev/" target="_blank">
+                <img src="../assets/brands/snapchat.svg" alt="Snapchat">
+            </a>
+            <a href="https://horustech.dev/" target="_blank">
+                <img src="../assets/brands/instagram.svg" alt="Instagram">
+            </a>
+            <a href="https://horustech.dev/" target="_blank">
+                <img src="../assets/brands/facebook.svg" alt="Facebook">
+            </a>
+            <a href="https://horustech.dev/" target="_blank">
+                <img src="../assets/brands/twitter.svg" alt="Twitter">
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript for Responsive Menu -->
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-menu');
+    });
+</script>
+
+</body>
+</html>
+

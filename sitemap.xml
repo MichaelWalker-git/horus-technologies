@@ -55,12 +55,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.horustech.dev/blog-aws-cost-optimization.html</loc>
-    <lastmod>2025-02-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.horustech.dev/privacy.html</loc>
     <lastmod>2025-02-01</lastmod>
     <changefreq>yearly</changefreq>

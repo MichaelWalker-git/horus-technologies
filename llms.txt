@@ -68,14 +68,35 @@ Also serving national enterprise clients remotely
 
 ## Case Studies
 
+### Bank of Montreal - Loan Processing Automation
+Automated handwritten loan application processing using Amazon Bedrock. Results: 65% processing time reduction (5-7 days to 1.5-2 days), $2.1M annual operational savings, 92% handwriting recognition accuracy, 40% cost reduction.
+
+### DegreeData - Course Catalog Automation
+Automated course catalog data processing for 500+ academic institutions using Amazon Bedrock. Results: 80% processing time reduction, $800K annual labor savings, 95% data accuracy, 180% ROI in 14 months.
+
+### Porsche Digital - Vehicle Tracking
+Implemented automated vehicle tracking system using AWS Textract to process Excel shipping manifests and integrate with third-party logistics APIs for real-time tracking across trucks and ships.
+
+### Volkswagen - Document Translation
+Automated transcription and translation of safety manuals from German to multiple languages using AWS Textract and Amazon Translate for global compliance documentation.
+
+### Ford Credit - Document Routing
+Developed automated document routing system using Textract, Comprehend, and A2I (human-in-the-loop) to classify and direct scanned letters to appropriate departments.
+
+### Samtec - Purchase Order Matching
+Created automated system to match and reconcile purchase orders with received goods and invoices using Textract, A2I, and Lambda routing.
+
+### Experian - VIN Compliance Matching
+Developed automated VIN matching system using Textract for extraction, DynamoDB for mapping, and Lambda triggers for compliance verification.
+
+### Ricoh - Enterprise Document Processing
+Reduced document processing time with automated workflow using AWS Textract, Comprehend, Amazon A2I, and Step Functions for complex document workflows.
+
 ### Healthcare Document Processing
 Helped a vital records provider process healthcare identity documents using AWS Generative AI, reducing turnaround time from days to minutes with 98-99% accuracy.
 
 ### Contract Review Automation
 Built a contract-intelligence platform on AWS that reduces contract review time from hours to minutes without increasing headcount.
-
-### College Catalog Data Transformation
-Transformed college catalog PDFs into structured course data for education data providers, reducing processing time from days to hours.
 
 ### Virtual Mailbox Automation
 Automated mail processing for a virtual mailbox provider using Generative AI, reducing costs by 60% and processing time from hours to minutes.

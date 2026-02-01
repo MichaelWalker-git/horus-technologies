@@ -1,0 +1,82 @@
+# Horus Technology
+
+> San Diego AWS consulting firm specializing in Generative AI, Intelligent Document Processing, and cloud transformation. Led by former AWS engineers.
+
+## About
+
+Horus Technology is an AWS consulting and AI/ML solutions firm based in San Diego, California. Our team includes former AWS engineers who specialize in building enterprise-grade cloud and AI solutions.
+
+## Services
+
+### AWS Consulting
+- Cloud migration and modernization
+- AWS architecture design and optimization
+- Cost optimization (average 40% reduction)
+- Managed cloud services and 24/7 support
+
+### Generative AI Solutions
+- Large Language Model (LLM) implementation
+- Custom model fine-tuning on proprietary data
+- Retrieval-Augmented Generation (RAG) systems
+- AI strategy consulting for enterprises
+
+### Intelligent Document Processing (IDP)
+- Automated document extraction using AWS Textract
+- Text analysis and classification with Amazon Comprehend
+- Human-in-the-loop validation with Amazon A2I
+- Workflow orchestration with AWS Step Functions
+- Document types: invoices, contracts, medical records, insurance claims, legal documents
+
+### Spatial Computing
+- Digital twins
+- AR/VR enterprise applications
+- 3D data visualization
+
+## Results We Deliver
+
+- 70% reduction in document processing time
+- 99.2% extraction accuracy with human-in-the-loop validation
+- 40% average AWS cost reduction
+- 60-75% cost savings vs manual processing
+
+## Industries Served
+
+- Healthcare and vital records processing
+- Financial services and banking
+- Legal and contract management
+- Manufacturing and logistics
+- Education and academic institutions
+- Real estate and property management
+
+## Location
+
+San Diego, California, USA
+Serving San Diego, Orange County, and Southern California
+Also serving national enterprise clients remotely
+
+## Contact
+
+- Website: https://www.horustech.dev
+- Email: info@horustech.dev
+- Proposals: proposals@horustech.dev
+- Phone: +1 (858) 412-0778
+
+## Case Studies
+
+### Healthcare Document Processing
+Helped a vital records provider process healthcare identity documents using AWS Generative AI, reducing turnaround time from days to minutes with 98-99% accuracy.
+
+### Contract Review Automation
+Built a contract-intelligence platform on AWS that reduces contract review time from hours to minutes without increasing headcount.
+
+### College Catalog Data Transformation
+Transformed college catalog PDFs into structured course data for education data providers, reducing processing time from days to hours.
+
+### Virtual Mailbox Automation
+Automated mail processing for a virtual mailbox provider using Generative AI, reducing costs by 60% and processing time from hours to minutes.
+
+## Technology Stack
+
+- AWS Services: Textract, Comprehend, Bedrock, SageMaker, Lambda, Step Functions, A2I
+- AI/ML: Large Language Models, RAG, Custom Fine-Tuning
+- Cloud: AWS architecture, serverless, microservices

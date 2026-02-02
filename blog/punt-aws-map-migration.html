@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How Punt Achieved 105% Platform Growth After Migrating to AWS | Horus Technology</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case study: How Punt migrated from DigitalOcean to AWS, overhauled their PHP Laravel backend, and scaled their platform 105% year-over-year using Aurora, ECS, and AWS MAP.">
+    <link rel="canonical" href="https://www.horustech.dev/blog/punt-aws-map-migration.html">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.horustech.dev/blog/punt-aws-map-migration.html">
+    <meta property="og:title" content="How Punt Achieved 105% Platform Growth After Migrating to AWS">
+    <meta property="og:description" content="Case study: DigitalOcean to AWS migration with 105% YoY growth using Aurora, ECS, and AWS MAP credits.">
+    <meta property="og:image" content="https://www.horustech.dev/assets/icons/horus-icon.svg">
+    <meta property="og:site_name" content="Horus Technology">
+    <meta property="article:published_time" content="2026-02-01">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Punt AWS Migration Case Study">
+    <meta name="twitter:description" content="105% platform growth after migrating from DigitalOcean to AWS.">
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How Punt Achieved 105% Platform Growth After Migrating to AWS",
+      "description": "Case study on migrating a high-traffic platform from DigitalOcean to AWS using Aurora PostgreSQL, ECS, and AWS MAP credits.",
+      "image": "https://www.horustech.dev/assets/icons/horus-icon.svg",
+      "datePublished": "2026-02-01",
+      "author": {
+        "@type": "Organization",
+        "name": "Horus Technology",
+        "url": "https://www.horustech.dev"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Horus Technology",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.horustech.dev/assets/icons/horus-icon.svg"
+        }
+      }
+    }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8HG04N5LZF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8HG04N5LZF');
+    </script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../assets/icons/horus-icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo"><img width="52" height="52" src="../assets/icons/horus-icon.svg" alt="Horus Technology logo" /> <p>Horus Technologies</p></a>
+            <ul class="nav-links">
+                <li><a href="../services.html">Services</a></li>
+                <li><a href="../index.html#about">What We Do</a></li>
+                <li><a href="../index.html#stories">Our stories</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="blog-post-hero">
+    <div class="container">
+        <a href="blog.html" class="blog-back-link">&larr; Back to Blog</a>
+        <div class="blog-post-meta">
+            <span class="blog-post-category">Case Study</span>
+            <span class="blog-post-date">February 2026</span>
+        </div>
+        <h1 class="blog-post-title">How Punt Achieved 105% Platform Growth After Migrating to AWS</h1>
+    </div>
+</section>
+
+<section class="blog-post-content">
+    <div class="container">
+        <article class="blog-post-article">
+            <p class="blog-post-lead">A real-time gaming platform migrated from DigitalOcean to AWS, overhauled their PHP Laravel backend, and scaled infrastructure to support 105% year-over-year growth&mdash;all while leveraging AWS MAP credits to offset migration costs.</p>
+
+            <h2>The Challenge</h2>
+
+            <p>Punt operates a high-traffic real-time gaming platform requiring sub-second response times, complex event processing, and strict compliance requirements. Their existing DigitalOcean infrastructure was reaching its limits:</p>
+
+            <ul class="blog-list">
+                <li><strong>Database bottlenecks:</strong> PostgreSQL couldn't handle concurrent load spikes</li>
+                <li><strong>Limited scaling:</strong> Manual server provisioning couldn't keep pace with user growth</li>
+                <li><strong>Compliance gaps:</strong> Needed SOC 2 and financial services compliance</li>
+                <li><strong>Monolithic architecture:</strong> PHP Laravel backend was difficult to scale independently</li>
+                <li><strong>Operational overhead:</strong> Team spent too much time on infrastructure management</li>
+            </ul>
+
+            <h2>The Solution: AWS Migration with MAP Credits</h2>
+
+            <p>Horus Technology partnered with Punt to execute a comprehensive migration using the <a href="https://aws.amazon.com/migration-acceleration-program/" target="_blank" rel="noopener">AWS Migration Acceleration Program (MAP)</a>, which provided credits to offset migration costs while implementing a modern, scalable architecture.</p>
+
+            <h3>Architecture Overview</h3>
+
+            <div style="background: #f9f9f9; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="border-bottom: 2px solid #ddd;">
+                        <th style="text-align: left; padding: 0.75rem;">Component</th>
+                        <th style="text-align: left; padding: 0.75rem;">Before (DigitalOcean)</th>
+                        <th style="text-align: left; padding: 0.75rem;">After (AWS)</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 0.75rem;">Database</td>
+                        <td style="padding: 0.75rem;">Managed PostgreSQL</td>
+                        <td style="padding: 0.75rem;">Aurora PostgreSQL (db.r6g.8xlarge)</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 0.75rem;">Compute</td>
+                        <td style="padding: 0.75rem;">Droplets (manual scaling)</td>
+                        <td style="padding: 0.75rem;">ECS Fargate (auto-scaling)</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 0.75rem;">Caching</td>
+                        <td style="padding: 0.75rem;">Redis (self-managed)</td>
+                        <td style="padding: 0.75rem;">Amazon ElastiCache</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 0.75rem;">Analytics</td>
+                        <td style="padding: 0.75rem;">None</td>
+                        <td style="padding: 0.75rem;">Amazon Redshift</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem;">Services</td>
+                        <td style="padding: 0.75rem;">Monolithic</td>
+                        <td style="padding: 0.75rem;">40+ microservices</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>Migration Approach</h3>
+
+            <p>The migration was executed in three phases over 6 months:</p>
+
+            <h4>Phase 1: Database Migration (Weeks 1-4)</h4>
+            <ul class="blog-list">
+                <li>Used AWS Database Migration Service (DMS) for zero-downtime PostgreSQL migration</li>
+                <li>Implemented Aurora read replicas for query load distribution</li>
+                <li>Set up automated backups and point-in-time recovery</li>
+            </ul>
+
+            <h4>Phase 2: Application Containerization (Weeks 5-12)</h4>
+            <ul class="blog-list">
+                <li>Decomposed Laravel monolith into 40+ microservices</li>
+                <li>Containerized all services with Docker</li>
+                <li>Deployed to ECS Fargate with auto-scaling policies</li>
+                <li>Implemented service mesh for inter-service communication</li>
+            </ul>
+
+            <h4>Phase 3: Optimization & Observability (Weeks 13-24)</h4>
+            <ul class="blog-list">
+                <li>Added Amazon Redshift for business analytics</li>
+                <li>Implemented comprehensive CloudWatch monitoring</li>
+                <li>Set up AWS WAF for security</li>
+                <li>Fine-tuned auto-scaling based on traffic patterns</li>
+            </ul>
+
+            <h2>Results: 13 Months of Growth Data</h2>
+
+            <p>Post-migration, the platform experienced significant growth while maintaining performance and reliability:</p>
+
+            <div style="background: #e8f5e9; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+                <h3 style="margin-top: 0;">Key Metrics</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; font-weight: bold; color: #2e7d32;">105%</div>
+                        <div>Year-over-Year Infrastructure Growth</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; font-weight: bold; color: #2e7d32;">212%</div>
+                        <div>Compute Capacity Increase</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; font-weight: bold; color: #2e7d32;">40+</div>
+                        <div>Microservices Deployed</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; font-weight: bold; color: #2e7d32;">500+</div>
+                        <div>Peak Concurrent DB Connections</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Monthly AWS Investment Growth</h3>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+                <tr style="border-bottom: 2px solid #ddd;">
+                    <th style="text-align: left; padding: 0.75rem;">Period</th>
+                    <th style="text-align: right; padding: 0.75rem;">Monthly AWS Spend</th>
+                    <th style="text-align: right; padding: 0.75rem;">Growth</th>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 0.75rem;">January 2025 (Baseline)</td>
+                    <td style="text-align: right; padding: 0.75rem;">$28,260</td>
+                    <td style="text-align: right; padding: 0.75rem;">&mdash;</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 0.75rem;">April 2025</td>
+                    <td style="text-align: right; padding: 0.75rem;">$34,862</td>
+                    <td style="text-align: right; padding: 0.75rem;">+23%</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 0.75rem;">July 2025 (Peak)</td>
+                    <td style="text-align: right; padding: 0.75rem;">$157,315</td>
+                    <td style="text-align: right; padding: 0.75rem;">+457%</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 0.75rem;">October 2025</td>
+                    <td style="text-align: right; padding: 0.75rem;">$59,190</td>
+                    <td style="text-align: right; padding: 0.75rem;">+109%</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem;"><strong>January 2026</strong></td>
+                    <td style="text-align: right; padding: 0.75rem;"><strong>$57,846</strong></td>
+                    <td style="text-align: right; padding: 0.75rem;"><strong>+105% YoY</strong></td>
+                </tr>
+            </table>
+
+            <p><em>Note: The July 2025 spike reflects a major platform expansion and promotional event that required temporary infrastructure scaling.</em></p>
+
+            <h3>Service-Level Growth (January 2025 vs January 2026)</h3>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+                <tr style="border-bottom: 2px solid #ddd;">
+                    <th style="text-align: left; padding: 0.75rem;">AWS Service</th>
+                    <th style="text-align: right; padding: 0.75rem;">Jan 2025</th>
+                    <th style="text-align: right; padding: 0.75rem;">Jan 2026</th>
+                    <th style="text-align: right; padding: 0.75rem;">Growth</th>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 0.75rem;">Amazon RDS (Aurora)</td>
+                    <td style="text-align: right; padding: 0.75rem;">$13,094</td>
+                    <td style="text-align: right; padding: 0.75rem;">$22,401</td>
+                    <td style="text-align: right; padding: 0.75rem;">+71%</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 0.75rem;">Amazon ECS</td>
+                    <td style="text-align: right; padding: 0.75rem;">$4,374</td>
+                    <td style="text-align: right; padding: 0.75rem;">$9,341</td>
+                    <td style="text-align: right; padding: 0.75rem;">+114%</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 0.75rem;">CloudWatch</td>
+                    <td style="text-align: right; padding: 0.75rem;">$1,034</td>
+                    <td style="text-align: right; padding: 0.75rem;">$5,806</td>
+                    <td style="text-align: right; padding: 0.75rem;">+462%</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 0.75rem;">ElastiCache</td>
+                    <td style="text-align: right; padding: 0.75rem;">$1,915</td>
+                    <td style="text-align: right; padding: 0.75rem;">$3,088</td>
+                    <td style="text-align: right; padding: 0.75rem;">+61%</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.75rem;">Redshift</td>
+                    <td style="text-align: right; padding: 0.75rem;">$1,637</td>
+                    <td style="text-align: right; padding: 0.75rem;">$3,644</td>
+                    <td style="text-align: right; padding: 0.75rem;">+123%</td>
+                </tr>
+            </table>
+
+            <h2>Current Infrastructure</h2>
+
+            <p>Today, the platform runs on a robust AWS infrastructure designed for scale:</p>
+
+            <ul class="blog-list">
+                <li><strong>Database:</strong> Aurora PostgreSQL cluster with db.r6g.8xlarge writer and read replica, handling 500+ concurrent connections and 4,000+ IOPS</li>
+                <li><strong>Compute:</strong> 40 ECS services across two accounts, with 15+ API containers auto-scaling based on demand</li>
+                <li><strong>Caching:</strong> ElastiCache for session management and real-time data</li>
+                <li><strong>Analytics:</strong> Redshift for business intelligence and reporting</li>
+                <li><strong>Security:</strong> AWS WAF, VPN access, CloudTrail audit logging</li>
+                <li><strong>Monitoring:</strong> Comprehensive CloudWatch dashboards and alerting</li>
+            </ul>
+
+            <h2>AWS MAP Benefits</h2>
+
+            <p>The AWS Migration Acceleration Program provided significant value:</p>
+
+            <ul class="blog-list">
+                <li><strong>Migration credits:</strong> Offset initial migration and infrastructure costs</li>
+                <li><strong>Partner support:</strong> Access to AWS migration specialists</li>
+                <li><strong>Best practices:</strong> Well-Architected Framework review</li>
+                <li><strong>Training:</strong> Team enablement on AWS services</li>
+            </ul>
+
+            <h2>Key Takeaways</h2>
+
+            <div style="background: #fff3cd; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                <h4 style="margin-top: 0;">Lessons Learned</h4>
+                <ol class="blog-list" style="margin-bottom: 0;">
+                    <li><strong>Start with the database:</strong> DMS enables zero-downtime migration for PostgreSQL</li>
+                    <li><strong>Containerize incrementally:</strong> Break monoliths into services over time, not all at once</li>
+                    <li><strong>Invest in observability early:</strong> CloudWatch costs scale with usage, but visibility is essential</li>
+                    <li><strong>Plan for burst capacity:</strong> ECS auto-scaling handles traffic spikes gracefully</li>
+                    <li><strong>Leverage MAP credits:</strong> AWS incentives significantly reduce migration risk</li>
+                </ol>
+            </div>
+
+            <h2>Ready to Migrate to AWS?</h2>
+
+            <p>Whether you're on DigitalOcean, Heroku, or another cloud provider, Horus Technology can help you plan and execute a successful AWS migration. Our team has experience with:</p>
+
+            <ul class="blog-list">
+                <li>AWS MAP program qualification and credit optimization</li>
+                <li>Database migrations (PostgreSQL, MySQL, MongoDB)</li>
+                <li>Container orchestration with ECS and EKS</li>
+                <li>Laravel, Node.js, and Python application modernization</li>
+            </ul>
+
+            <p>See also: <a href="../aws-consulting-san-diego.html">AWS Consulting Services</a> | <a href="aws-textract-implementation-guide.html">AWS Textract Guide</a></p>
+
+            <div class="blog-post-footer">
+                <a href="../index.html#contact" class="blog-cta-button">Discuss Your Migration</a>
+                <a href="blog.html" class="blog-back-link-bottom">&larr; Back to Blog</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="container">
+        <div class="footer-text">
+            <h2>Horus Technology</h2>
+            <p>&copy; 2026 Horus Technology. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="../privacy.html">Privacy Policy</a>
+                <span>|</span>
+                <a href="../terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="icons">
+            <a href="https://www.linkedin.com/company/ushorus-technologies" target="_blank">
+                <img src="../assets/brands/linkedin.svg" alt="LinkedIn">
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-menu');
+    });
+</script>
+
+</body>
+</html>

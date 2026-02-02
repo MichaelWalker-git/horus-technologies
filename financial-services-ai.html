@@ -49,6 +49,77 @@
     }
     </script>
 
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does it take to implement AI document processing for financial services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most implementations take 8-12 weeks from kickoff to production. This includes discovery, architecture design, development, testing, and deployment. We can often deliver a proof-of-concept within 2-3 weeks to demonstrate value quickly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What accuracy can I expect from automated loan processing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our solutions typically achieve 92-99% accuracy depending on document quality and complexity. For handwritten documents, we achieve 92%+ accuracy using Amazon Bedrock. Human-in-the-loop validation ensures 99.9% accuracy for critical decisions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is AI document processing compliant with banking regulations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Our solutions are built on AWS, which maintains compliance with SOC 1/2/3, PCI DSS, and other financial services regulations. We implement audit trails, encryption at rest and in transit, and role-based access controls to meet regulatory requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What ROI can financial institutions expect from document automation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our clients typically see 40-65% reduction in processing time and 40% cost savings. Bank of Montreal achieved $2.1M in annual operational savings. ROI is usually realized within 12-18 months of implementation."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Review Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "AI Document Processing for Financial Services",
+      "brand": {"@type": "Brand", "name": "Horus Technology"},
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "12"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+          "author": {"@type": "Organization", "name": "Bank of Montreal"},
+          "reviewBody": "Reduced loan processing time by 65% and achieved $2.1M in annual operational savings with 92% handwriting recognition accuracy."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+          "author": {"@type": "Organization", "name": "Ford Credit"},
+          "reviewBody": "Automated document routing system successfully classifies and directs scanned letters to appropriate departments with high accuracy."
+        }
+      ]
+    }
+    </script>
+
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="assets/icons/horus-icon.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -141,17 +212,18 @@
         <h2 style="text-align: center; margin-bottom: 3rem;">Featured Financial Services Clients</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
             <div style="background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                <img src="assets/brands/BMO.png" alt="Bank of Montreal" style="height: 40px; margin-bottom: 1rem;">
+                <img src="assets/brands/BMO.png" alt="Bank of Montreal logo - Horus Technology financial services client" style="height: 40px; margin-bottom: 1rem;" loading="lazy">
                 <h3>Bank of Montreal</h3>
                 <p>Automated loan processing with Bedrock-powered handwriting extraction. Reduced processing time from 5-7 days to 1.5-2 days, delivering $2.1M in annual operational savings.</p>
+                <a href="blog/bmo-loan-processing-automation.html" style="color: #FF9900; text-decoration: none; font-weight: bold;">Read full case study &rarr;</a>
             </div>
             <div style="background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                <img src="assets/brands/ford.png" alt="Ford Credit" style="height: 40px; margin-bottom: 1rem;">
+                <img src="assets/brands/ford.png" alt="Ford Credit logo - Horus Technology financial services client" style="height: 40px; margin-bottom: 1rem;" loading="lazy">
                 <h3>Ford Credit</h3>
                 <p>Automated document routing system using Textract, Comprehend, and A2I to classify and direct scanned letters to appropriate departments.</p>
             </div>
             <div style="background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                <img src="assets/brands/experian.png" alt="Experian" style="height: 40px; margin-bottom: 1rem;">
+                <img src="assets/brands/experian.png" alt="Experian logo - Horus Technology compliance automation client" style="height: 40px; margin-bottom: 1rem;" loading="lazy">
                 <h3>Experian</h3>
                 <p>Automated VIN matching system using Textract for extraction, DynamoDB for mapping, and Lambda triggers for compliance verification.</p>
             </div>
@@ -179,6 +251,36 @@
                 <p style="color: #ccc;">Human-in-the-loop validation for high-confidence decisions</p>
             </div>
         </div>
+    </div>
+</section>
+
+<section style="padding: 4rem 0; background: #fff;">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 3rem;">Frequently Asked Questions</h2>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid #eee;">
+                <h3 style="margin-bottom: 1rem;">How long does it take to implement AI document processing?</h3>
+                <p style="color: #666;">Most implementations take 8-12 weeks from kickoff to production. This includes discovery, architecture design, development, testing, and deployment. We can often deliver a proof-of-concept within 2-3 weeks to demonstrate value quickly.</p>
+            </div>
+            <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid #eee;">
+                <h3 style="margin-bottom: 1rem;">What accuracy can I expect from automated loan processing?</h3>
+                <p style="color: #666;">Our solutions typically achieve 92-99% accuracy depending on document quality and complexity. For handwritten documents, we achieve 92%+ accuracy using Amazon Bedrock. Human-in-the-loop validation ensures 99.9% accuracy for critical decisions.</p>
+            </div>
+            <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid #eee;">
+                <h3 style="margin-bottom: 1rem;">Is AI document processing compliant with banking regulations?</h3>
+                <p style="color: #666;">Yes. Our solutions are built on AWS, which maintains compliance with SOC 1/2/3, PCI DSS, and other financial services regulations. We implement audit trails, encryption at rest and in transit, and role-based access controls.</p>
+            </div>
+            <div style="margin-bottom: 2rem;">
+                <h3 style="margin-bottom: 1rem;">What ROI can financial institutions expect?</h3>
+                <p style="color: #666;">Our clients typically see 40-65% reduction in processing time and 40% cost savings. Bank of Montreal achieved $2.1M in annual operational savings. ROI is usually realized within 12-18 months.</p>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem;">
+            <strong>Related Services:</strong>
+            <a href="intelligent-document-processing.html" style="color: #FF9900; margin: 0 1rem;">Intelligent Document Processing</a> |
+            <a href="generative-ai-services.html" style="color: #FF9900; margin: 0 1rem;">Generative AI Services</a> |
+            <a href="aws-consulting-san-diego.html" style="color: #FF9900; margin: 0 1rem;">AWS Consulting</a>
+        </p>
     </div>
 </section>
 

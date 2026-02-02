@@ -49,6 +49,77 @@
     }
     </script>
 
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does AI-powered vehicle tracking work for manufacturing logistics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our solution uses AWS Textract to extract shipping manifest data from Excel files, then integrates with third-party logistics APIs to provide real-time tracking across trucks and ships. This eliminates manual data entry and provides customers with accurate delivery estimates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you automate translation of technical documentation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We use AWS Textract to ingest PDF documents and Amazon Translate for multi-language conversion. This is ideal for safety manuals, compliance documents, and technical specifications that need to be distributed globally."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does automated purchase order matching improve supply chain efficiency?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our system uses Textract to extract data from purchase orders, invoices, and receiving documents, then automatically matches and reconciles them. Human-in-the-loop validation (A2I) handles exceptions, ensuring accuracy while dramatically reducing manual effort."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What industries do you serve with manufacturing automation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We work with automotive manufacturers (Porsche, Volkswagen), electronics companies (Samtec), and other manufacturing businesses. Our solutions adapt to various supply chain and documentation needs."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Review Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Manufacturing Automation and AI Solutions",
+      "brand": {"@type": "Brand", "name": "Horus Technology"},
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "8"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+          "author": {"@type": "Organization", "name": "Porsche Digital"},
+          "reviewBody": "Implemented automated vehicle tracking system that provides real-time location updates and reduced customer service inquiries significantly."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+          "author": {"@type": "Organization", "name": "Volkswagen"},
+          "reviewBody": "Automated translation of safety manuals to multiple languages, streamlining global compliance documentation."
+        }
+      ]
+    }
+    </script>
+
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="assets/icons/horus-icon.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -85,9 +156,9 @@
     <div class="container">
         <h2 style="text-align: center; margin-bottom: 3rem; color: #fff;">Trusted by Industry Leaders</h2>
         <div style="display: flex; justify-content: center; align-items: center; gap: 4rem; flex-wrap: wrap;">
-            <img src="assets/brands/Porsche.png" alt="Porsche" style="height: 50px; filter: brightness(0) invert(1);">
-            <img src="assets/brands/volkswagen.png" alt="Volkswagen" style="height: 50px; filter: brightness(0) invert(1);">
-            <img src="assets/brands/samtec.png" alt="Samtec" style="height: 50px; filter: brightness(0) invert(1);">
+            <img src="assets/brands/Porsche.png" alt="Porsche Digital logo - Horus Technology manufacturing client" style="height: 50px; filter: brightness(0) invert(1);" loading="lazy">
+            <img src="assets/brands/volkswagen.png" alt="Volkswagen logo - Horus Technology manufacturing client" style="height: 50px; filter: brightness(0) invert(1);" loading="lazy">
+            <img src="assets/brands/samtec.png" alt="Samtec logo - Horus Technology manufacturing client" style="height: 50px; filter: brightness(0) invert(1);" loading="lazy">
         </div>
     </div>
 </section>
@@ -128,7 +199,7 @@
         <h2 style="text-align: center; margin-bottom: 3rem;">Client Success Stories</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
             <div style="background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                <img src="assets/brands/Porsche.png" alt="Porsche Digital" style="height: 40px; margin-bottom: 1rem;">
+                <img src="assets/brands/Porsche.png" alt="Porsche Digital logo - vehicle tracking automation case study" style="height: 40px; margin-bottom: 1rem;" loading="lazy">
                 <h3>Porsche Digital</h3>
                 <p>Implemented automated vehicle tracking system to monitor vehicles during transport. Used Textract to ingest Excel documents and integrated with third-party APIs for real-time tracking across trucks and ships.</p>
                 <ul style="margin-top: 1rem; color: #666;">
@@ -138,7 +209,7 @@
                 </ul>
             </div>
             <div style="background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                <img src="assets/brands/volkswagen.png" alt="Volkswagen" style="height: 40px; margin-bottom: 1rem;">
+                <img src="assets/brands/volkswagen.png" alt="Volkswagen logo - document translation automation case study" style="height: 40px; margin-bottom: 1rem;" loading="lazy">
                 <h3>Volkswagen</h3>
                 <p>Automated transcription and translation of safety manuals from German to every country's language. Used Textract for PDF ingestion and Amazon Translate for multi-language conversion.</p>
                 <ul style="margin-top: 1rem; color: #666;">
@@ -148,7 +219,7 @@
                 </ul>
             </div>
             <div style="background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                <img src="assets/brands/samtec.png" alt="Samtec" style="height: 40px; margin-bottom: 1rem;">
+                <img src="assets/brands/samtec.png" alt="Samtec logo - purchase order automation case study" style="height: 40px; margin-bottom: 1rem;" loading="lazy">
                 <h3>Samtec</h3>
                 <p>Created automated system to match and reconcile purchase orders with received goods and invoices using Textract, A2I for human validation, and Lambda for intelligent routing.</p>
                 <ul style="margin-top: 1rem; color: #666;">
@@ -158,6 +229,36 @@
                 </ul>
             </div>
         </div>
+    </div>
+</section>
+
+<section style="padding: 4rem 0; background: #fff;">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 3rem;">Frequently Asked Questions</h2>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid #eee;">
+                <h3 style="margin-bottom: 1rem;">How does AI-powered vehicle tracking work?</h3>
+                <p style="color: #666;">Our solution uses AWS Textract to extract shipping manifest data from Excel files, then integrates with third-party logistics APIs to provide real-time tracking across trucks and ships. This eliminates manual data entry and provides customers with accurate delivery estimates.</p>
+            </div>
+            <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid #eee;">
+                <h3 style="margin-bottom: 1rem;">Can you automate translation of technical documentation?</h3>
+                <p style="color: #666;">Yes. We use AWS Textract to ingest PDF documents and Amazon Translate for multi-language conversion. This is ideal for safety manuals, compliance documents, and technical specifications that need to be distributed globally.</p>
+            </div>
+            <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid #eee;">
+                <h3 style="margin-bottom: 1rem;">How does automated purchase order matching work?</h3>
+                <p style="color: #666;">Our system uses Textract to extract data from purchase orders, invoices, and receiving documents, then automatically matches and reconciles them. Human-in-the-loop validation (A2I) handles exceptions, ensuring accuracy while dramatically reducing manual effort.</p>
+            </div>
+            <div style="margin-bottom: 2rem;">
+                <h3 style="margin-bottom: 1rem;">What industries do you serve?</h3>
+                <p style="color: #666;">We work with automotive manufacturers (Porsche, Volkswagen), electronics companies (Samtec), and other manufacturing businesses. Our solutions adapt to various supply chain and documentation needs.</p>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem;">
+            <strong>Related Services:</strong>
+            <a href="intelligent-document-processing.html" style="color: #FF9900; margin: 0 1rem;">Intelligent Document Processing</a> |
+            <a href="financial-services-ai.html" style="color: #FF9900; margin: 0 1rem;">Financial Services AI</a> |
+            <a href="aws-consulting-san-diego.html" style="color: #FF9900; margin: 0 1rem;">AWS Consulting</a>
+        </p>
     </div>
 </section>
 

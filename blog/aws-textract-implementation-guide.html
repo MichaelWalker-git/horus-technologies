@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AWS Textract Implementation Guide: From Setup to Production | Horus Technology</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete guide to implementing AWS Textract for document processing. Learn architecture patterns, best practices, and real-world implementation tips from former AWS engineers.">
+    <link rel="canonical" href="https://www.horustech.dev/blog/aws-textract-implementation-guide.html">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.horustech.dev/blog/aws-textract-implementation-guide.html">
+    <meta property="og:title" content="AWS Textract Implementation Guide: From Setup to Production">
+    <meta property="og:description" content="Complete guide to implementing AWS Textract for document processing from former AWS engineers.">
+    <meta property="og:image" content="https://www.horustech.dev/assets/icons/horus-icon.svg">
+    <meta property="og:site_name" content="Horus Technology">
+    <meta property="article:published_time" content="2025-02-01">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="AWS Textract Implementation Guide">
+    <meta name="twitter:description" content="Complete implementation guide from former AWS engineers.">
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "AWS Textract Implementation Guide: From Setup to Production",
+      "description": "Complete guide to implementing AWS Textract for document processing. Learn architecture patterns, best practices, and real-world implementation tips.",
+      "image": "https://www.horustech.dev/assets/icons/horus-icon.svg",
+      "datePublished": "2025-02-01",
+      "author": {
+        "@type": "Organization",
+        "name": "Horus Technology",
+        "url": "https://www.horustech.dev"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Horus Technology",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.horustech.dev/assets/icons/horus-icon.svg"
+        }
+      }
+    }
+    </script>
+
+    <!-- HowTo Schema for rich snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Implement AWS Textract for Document Processing",
+      "description": "Step-by-step guide to implementing AWS Textract in production",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Set up AWS infrastructure",
+          "text": "Create S3 buckets for document storage and configure IAM roles with least-privilege access."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Choose the right Textract API",
+          "text": "Select between DetectDocumentText, AnalyzeDocument, or AnalyzeExpense based on your document types."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Implement asynchronous processing",
+          "text": "Use StartDocumentAnalysis for documents over 1 page and set up SNS notifications for completion."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Add human-in-the-loop validation",
+          "text": "Integrate Amazon A2I to route low-confidence extractions to human reviewers."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Build the processing pipeline",
+          "text": "Use AWS Step Functions to orchestrate the workflow from ingestion to storage."
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8HG04N5LZF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8HG04N5LZF');
+    </script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../assets/icons/horus-icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo"><img width="52" height="52" src="../assets/icons/horus-icon.svg" /> <p>Horus Technologies</p></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">What We Do</a></li>
+                <li><a href="../index.html#stories">Our stories</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="blog-post-hero">
+    <div class="container">
+        <a href="blog.html" class="blog-back-link">&larr; Back to Blog</a>
+        <div class="blog-post-meta">
+            <span class="blog-post-category">Technical Guide</span>
+            <span class="blog-post-date">February 2025</span>
+        </div>
+        <h1 class="blog-post-title">AWS Textract Implementation Guide: From Setup to Production</h1>
+    </div>
+</section>
+
+<section class="blog-post-content">
+    <div class="container">
+        <article class="blog-post-article">
+            <p class="blog-post-lead">A comprehensive guide to implementing AWS Textract for intelligent document processing, based on our experience building production systems for Fortune 500 companies.</p>
+
+            <p>AWS Textract is a machine learning service that automatically extracts text, handwriting, and data from scanned documents. Unlike traditional OCR, Textract understands document structure&mdash;identifying forms, tables, and relationships between data.</p>
+
+            <p>At Horus Technology, we've implemented Textract-based solutions for clients like <a href="bmo-loan-processing-automation.html">Bank of Montreal</a>, Ford Credit, and Ricoh. This guide shares the architecture patterns and best practices we've learned.</p>
+
+            <h2>When to Use AWS Textract</h2>
+
+            <p>Textract excels at:</p>
+            <ul class="blog-list">
+                <li><strong>Forms with key-value pairs</strong> &ndash; Loan applications, tax forms, insurance claims</li>
+                <li><strong>Documents with tables</strong> &ndash; Invoices, purchase orders, financial statements</li>
+                <li><strong>Mixed content</strong> &ndash; Documents combining printed text, handwriting, and checkboxes</li>
+                <li><strong>High-volume processing</strong> &ndash; Thousands of documents per day</li>
+            </ul>
+
+            <p>Consider alternatives if you need:</p>
+            <ul class="blog-list">
+                <li>Simple text extraction from clean PDFs &ndash; Use Amazon Comprehend or basic PDF libraries</li>
+                <li>Complex reasoning about document content &ndash; Combine with <a href="../generative-ai-services.html">Amazon Bedrock</a></li>
+                <li>Real-time processing of video/streams &ndash; Use Amazon Rekognition</li>
+            </ul>
+
+            <h2>Textract API Options</h2>
+
+            <p>Textract offers three main APIs:</p>
+
+            <h3>1. DetectDocumentText</h3>
+            <p>Extracts raw text and word bounding boxes. Best for simple text extraction without structure.</p>
+            <pre style="background: #f5f5f5; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code>import boto3
+
+client = boto3.client('textract')
+response = client.detect_document_text(
+    Document={'S3Object': {'Bucket': 'my-bucket', 'Name': 'document.pdf'}}
+)</code></pre>
+
+            <h3>2. AnalyzeDocument</h3>
+            <p>Extracts forms (key-value pairs) and tables. Best for structured documents.</p>
+            <pre style="background: #f5f5f5; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code>response = client.analyze_document(
+    Document={'S3Object': {'Bucket': 'my-bucket', 'Name': 'form.pdf'}},
+    FeatureTypes=['FORMS', 'TABLES']
+)</code></pre>
+
+            <h3>3. AnalyzeExpense</h3>
+            <p>Specialized for invoices and receipts. Automatically identifies vendor, line items, totals.</p>
+            <pre style="background: #f5f5f5; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code>response = client.analyze_expense(
+    Document={'S3Object': {'Bucket': 'my-bucket', 'Name': 'invoice.pdf'}}
+)</code></pre>
+
+            <h2>Architecture Pattern: Production Document Processing</h2>
+
+            <p>For production workloads, we recommend this architecture:</p>
+
+            <div style="background: #f9f9f9; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+                <h4 style="margin-top: 0;">Component Flow</h4>
+                <p style="font-family: monospace; line-height: 2;">
+                    S3 (Input) &rarr; Lambda (Trigger) &rarr; Step Functions &rarr; Textract (Async) &rarr; SNS &rarr; Lambda (Process Results) &rarr; A2I (If needed) &rarr; DynamoDB/RDS (Store)
+                </p>
+            </div>
+
+            <h3>Key Components</h3>
+
+            <p><strong>1. S3 for Document Storage</strong></p>
+            <p>Create separate buckets for input documents, processed results, and failed documents:</p>
+            <ul class="blog-list">
+                <li><code>company-documents-input</code> &ndash; Raw uploaded documents</li>
+                <li><code>company-documents-processed</code> &ndash; Extraction results (JSON)</li>
+                <li><code>company-documents-failed</code> &ndash; Documents that failed processing</li>
+            </ul>
+
+            <p><strong>2. Asynchronous Processing</strong></p>
+            <p>For documents over 1 page, use async APIs:</p>
+            <pre style="background: #f5f5f5; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code># Start async job
+response = client.start_document_analysis(
+    DocumentLocation={'S3Object': {'Bucket': 'bucket', 'Name': 'doc.pdf'}},
+    FeatureTypes=['FORMS', 'TABLES'],
+    NotificationChannel={
+        'SNSTopicArn': 'arn:aws:sns:us-east-1:123456789:textract-complete',
+        'RoleArn': 'arn:aws:iam::123456789:role/TextractRole'
+    }
+)
+job_id = response['JobId']
+
+# Later, get results
+result = client.get_document_analysis(JobId=job_id)</code></pre>
+
+            <p><strong>3. Step Functions for Orchestration</strong></p>
+            <p>Use Step Functions to handle retries, parallel processing, and error handling. This is critical for production reliability.</p>
+
+            <p><strong>4. Human-in-the-Loop with A2I</strong></p>
+            <p>Route low-confidence extractions to human reviewers using Amazon A2I. This is essential for maintaining accuracy in critical workflows like loan processing.</p>
+
+            <h2>Best Practices</h2>
+
+            <h3>1. Handle Confidence Scores</h3>
+            <p>Every Textract extraction includes a confidence score (0-100). Set thresholds based on your accuracy requirements:</p>
+            <ul class="blog-list">
+                <li><strong>&gt;95%</strong> &ndash; Auto-accept</li>
+                <li><strong>80-95%</strong> &ndash; Flag for review</li>
+                <li><strong>&lt;80%</strong> &ndash; Route to human reviewer</li>
+            </ul>
+
+            <h3>2. Optimize for Cost</h3>
+            <p>Textract pricing is per page. Optimize costs by:</p>
+            <ul class="blog-list">
+                <li>Pre-filtering documents that don't need OCR</li>
+                <li>Using DetectDocumentText for simple extractions (cheaper than AnalyzeDocument)</li>
+                <li>Batching documents when possible</li>
+                <li>Caching results for duplicate documents</li>
+            </ul>
+
+            <h3>3. Handle Multi-Page Documents</h3>
+            <p>For documents over 1 page, you must use async APIs. Results come in paginated blocks that need to be reassembled:</p>
+            <pre style="background: #f5f5f5; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code>def get_all_results(job_id):
+    pages = []
+    next_token = None
+
+    while True:
+        if next_token:
+            response = client.get_document_analysis(
+                JobId=job_id, NextToken=next_token
+            )
+        else:
+            response = client.get_document_analysis(JobId=job_id)
+
+        pages.extend(response['Blocks'])
+        next_token = response.get('NextToken')
+
+        if not next_token:
+            break
+
+    return pages</code></pre>
+
+            <h3>4. Structure Your Output</h3>
+            <p>Textract returns raw blocks. Build helper functions to extract structured data:</p>
+            <pre style="background: #f5f5f5; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code>def extract_key_value_pairs(blocks):
+    key_map = {}
+    value_map = {}
+    block_map = {block['Id']: block for block in blocks}
+
+    for block in blocks:
+        if block['BlockType'] == 'KEY_VALUE_SET':
+            if 'KEY' in block.get('EntityTypes', []):
+                key = get_text(block, block_map)
+                value_block = get_value_block(block, block_map)
+                value = get_text(value_block, block_map)
+                key_map[key] = value
+
+    return key_map</code></pre>
+
+            <h2>Common Pitfalls to Avoid</h2>
+
+            <ul class="blog-list">
+                <li><strong>Ignoring document quality</strong> &ndash; Low-resolution scans dramatically reduce accuracy. Recommend 300 DPI minimum.</li>
+                <li><strong>Not handling rotated documents</strong> &ndash; Use Textract's orientation detection or pre-process with image libraries.</li>
+                <li><strong>Synchronous processing at scale</strong> &ndash; Sync APIs have lower throughput limits. Use async for production.</li>
+                <li><strong>No retry logic</strong> &ndash; Textract can throttle. Implement exponential backoff.</li>
+                <li><strong>Skipping validation</strong> &ndash; Always validate extractions against expected formats (dates, numbers, etc.)</li>
+            </ul>
+
+            <h2>Real-World Results</h2>
+
+            <p>Using these patterns, our clients have achieved:</p>
+            <ul class="blog-list">
+                <li><strong>Bank of Montreal:</strong> 65% faster loan processing, $2.1M annual savings</li>
+                <li><strong>Ford Credit:</strong> Automated document routing to appropriate departments</li>
+                <li><strong>Ricoh:</strong> Complex document workflow automation with human validation</li>
+            </ul>
+
+            <h2>Next Steps</h2>
+
+            <p>For more complex document understanding&mdash;like extracting meaning from unstructured text or handling handwriting&mdash;consider combining Textract with <a href="../generative-ai-services.html">Amazon Bedrock</a>. We've seen 92% accuracy on handwritten documents using this approach.</p>
+
+            <p>Need help implementing Textract for your organization? Our team has built production document processing systems for some of the largest financial institutions and manufacturers in North America.</p>
+
+            <div class="blog-post-footer">
+                <a href="../index.html#contact" class="blog-cta-button">Get Implementation Help</a>
+                <a href="blog.html" class="blog-back-link-bottom">&larr; Back to Blog</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="container">
+        <div class="footer-text">
+            <h2>Horus Technology</h2>
+            <p>&copy; 2025 Horus Technology. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="../privacy.html">Privacy Policy</a>
+                <span>|</span>
+                <a href="../terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="icons">
+            <a href="https://www.linkedin.com/company/ushorus-technologies" target="_blank">
+                <img src="../assets/brands/linkedin.svg" alt="LinkedIn">
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-menu');
+    });
+</script>
+
+</body>
+</html>

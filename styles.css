@@ -76,7 +76,7 @@ body {
 
 .menu-toggle i {
     font-size: 1.5em;
-    color: #333;
+    color: #fff;
 }
 
 .container {
@@ -88,13 +88,15 @@ body {
 /* Hero Section */
 .hero {
     background-color: rgba(0, 0, 0, 1);
-    height: 100vh;
+    min-height: 100vh;
     background-image: url('assets/hero-bg.svg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position-x: 100%;
     color: #fff;
     position: relative;
+    padding-top: 100px;
+    padding-bottom: 120px;
 }
 
 .hero .container {
@@ -102,8 +104,8 @@ body {
     z-index: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 100%;
+    justify-content: flex-start;
+    height: auto;
 }
 
 .hero h1 {
@@ -169,7 +171,105 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 14%;
+    margin-bottom: 10%;
+    padding-top: 20px;
+}
+
+/* AWS Partner Badge */
+.aws-partner-badge {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 30px;
+    padding: 16px 24px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 153, 0, 0.3);
+    max-width: fit-content;
+}
+
+.aws-partner-badge img {
+    height: 50px;
+    width: auto;
+}
+
+/* AWS Text Logo */
+.aws-logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+}
+
+.aws-logo-text .aws-smile {
+    color: #FF9900;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: -8px;
+    transform: scaleX(2.5) scaleY(0.8);
+}
+
+.aws-logo-text .aws-text {
+    color: #FF9900;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: 'Amazon Ember', 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: -1px;
+}
+
+.aws-partner-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.aws-partner-info .partner-title {
+    color: #FF9900;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.aws-partner-info .partner-desc {
+    color: #C4C4C4;
+    font-size: 13px;
+    font-weight: 300;
+    margin: 0;
+}
+
+/* AWS Services Grid */
+.aws-services-section {
+    margin-top: 24px;
+}
+
+.aws-services-title {
+    color: #47BAAD;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.aws-services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 600px;
+}
+
+.aws-service-tag {
+    background: rgba(255, 153, 0, 0.15);
+    color: #FF9900;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid rgba(255, 153, 0, 0.3);
+    white-space: nowrap;
 }
 
 @keyframes scroll {
@@ -345,7 +445,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 39vw;
+    width: 100%;
+    max-width: 600px;
     gap: 10px;
 }
 
@@ -369,12 +470,15 @@ body {
     .navbar .nav-links {
         display: none;
         flex-direction: column;
-        background-color: #fff;
+        background-color: rgba(0, 0, 0, 0.95);
         position: absolute;
         top: 70px;
         right: 0;
-        width: 200px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        left: 0;
+        width: 100%;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        padding: 20px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .navbar .nav-links.mobile-menu {
@@ -382,7 +486,15 @@ body {
     }
 
     .navbar .nav-links li {
-        margin: 10px 0;
+        margin: 15px 20px;
+        text-align: center;
+    }
+
+    .navbar .nav-links a {
+        color: #fff;
+        font-size: 1.1em;
+        display: block;
+        padding: 10px 0;
     }
 
     .menu-toggle {
@@ -391,14 +503,6 @@ body {
 
     .service-cards .card {
         flex: 1 1 100%;
-    }
-
-    .hero {
-        padding: 150px 0 100px;
-    }
-
-    .hero h1 {
-        font-size: 2.5em;
     }
 }
 
@@ -699,21 +803,62 @@ body {
 /*responsive rules*/
 @media (max-width: 768px) {
     .hero {
-        padding: 100px 20px 60px;
+        padding: 120px 20px 60px;
         text-align: center;
+        height: auto;
+        min-height: 100vh;
     }
 
     .hero h1 {
-        font-size: 2em;
+        font-size: 1.8em;
     }
 
     .hero h4 {
-        font-size: 1.2em;
+        font-size: 1em;
+        line-height: 1.5;
+    }
+
+    .hero h4 br {
+        display: none;
+    }
+
+    .hero-text {
+        margin-bottom: 20px;
     }
 
     .logos {
         position: static;
-        margin-top: 40px;
+        margin-top: 30px;
+    }
+
+    /* AWS Partner Badge Mobile */
+    .aws-partner-badge {
+        flex-direction: column;
+        text-align: center;
+        margin: 20px auto 0;
+        padding: 16px;
+    }
+
+    .aws-partner-info {
+        align-items: center;
+    }
+
+    .aws-services-section {
+        margin-top: 20px;
+    }
+
+    .aws-services-title {
+        text-align: center;
+    }
+
+    .aws-services-grid {
+        justify-content: center;
+        max-width: 100%;
+    }
+
+    .aws-service-tag {
+        font-size: 11px;
+        padding: 5px 10px;
     }
 
     .about {
@@ -726,8 +871,22 @@ body {
         gap: 30px;
     }
 
-    .about-text, .stories-text, .contact-text {
+    .about-text, .stories-text {
         width: 100%;
+    }
+
+    .contact-text {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-text h1 {
+        font-size: 48px;
+    }
+
+    .contact-text h4 {
+        font-size: 18px;
+        text-align: center;
     }
 
     .about-cards {

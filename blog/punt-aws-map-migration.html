@@ -66,14 +66,15 @@
         <div class="container">
             <a href="../index.html" class="logo"><img width="52" height="52" src="../assets/icons/horus-icon.svg" alt="Horus Technology logo" /> <p>Horus Technologies</p></a>
             <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
                 <li><a href="../services.html">Services</a></li>
                 <li><a href="../index.html#about">What We Do</a></li>
                 <li><a href="../index.html#stories">Our stories</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="../index.html#contact">Contact</a></li>
             </ul>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
+            <div class="menu-toggle" aria-label="Open mobile menu" role="button" tabindex="0">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </div>
         </div>
     </nav>
@@ -113,38 +114,42 @@
 
             <h3>Architecture Overview</h3>
 
-            <div style="background: #f9f9f9; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
-                <table style="width: 100%; border-collapse: collapse;">
-                    <tr style="border-bottom: 2px solid #ddd;">
-                        <th style="text-align: left; padding: 0.75rem;">Component</th>
-                        <th style="text-align: left; padding: 0.75rem;">Before (DigitalOcean)</th>
-                        <th style="text-align: left; padding: 0.75rem;">After (AWS)</th>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #eee;">
-                        <td style="padding: 0.75rem;">Database</td>
-                        <td style="padding: 0.75rem;">Managed PostgreSQL</td>
-                        <td style="padding: 0.75rem;">Aurora PostgreSQL (db.r6g.8xlarge)</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #eee;">
-                        <td style="padding: 0.75rem;">Compute</td>
-                        <td style="padding: 0.75rem;">Droplets (manual scaling)</td>
-                        <td style="padding: 0.75rem;">ECS Fargate (auto-scaling)</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #eee;">
-                        <td style="padding: 0.75rem;">Caching</td>
-                        <td style="padding: 0.75rem;">Redis (self-managed)</td>
-                        <td style="padding: 0.75rem;">Amazon ElastiCache</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #eee;">
-                        <td style="padding: 0.75rem;">Analytics</td>
-                        <td style="padding: 0.75rem;">None</td>
-                        <td style="padding: 0.75rem;">Amazon Redshift</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 0.75rem;">Services</td>
-                        <td style="padding: 0.75rem;">Monolithic</td>
-                        <td style="padding: 0.75rem;">40+ microservices</td>
-                    </tr>
+            <div class="info-box">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Before (DigitalOcean)</th>
+                            <th>After (AWS)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Database</td>
+                            <td>Managed PostgreSQL</td>
+                            <td>Aurora PostgreSQL (db.r6g.8xlarge)</td>
+                        </tr>
+                        <tr>
+                            <td>Compute</td>
+                            <td>Droplets (manual scaling)</td>
+                            <td>ECS Fargate (auto-scaling)</td>
+                        </tr>
+                        <tr>
+                            <td>Caching</td>
+                            <td>Redis (self-managed)</td>
+                            <td>Amazon ElastiCache</td>
+                        </tr>
+                        <tr>
+                            <td>Analytics</td>
+                            <td>None</td>
+                            <td>Amazon Redshift</td>
+                        </tr>
+                        <tr>
+                            <td>Services</td>
+                            <td>Monolithic</td>
+                            <td>40+ microservices</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
 
@@ -179,104 +184,112 @@
 
             <p>Post-migration, the platform experienced significant growth while maintaining performance and reliability:</p>
 
-            <div style="background: #e8f5e9; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
-                <h3 style="margin-top: 0;">Key Metrics</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; font-weight: bold; color: #2e7d32;">105%</div>
-                        <div>Year-over-Year Infrastructure Growth</div>
+            <div class="metrics-box metrics-box--success">
+                <h3>Key Metrics</h3>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-value">105%</div>
+                        <div class="metric-label">Year-over-Year Infrastructure Growth</div>
                     </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; font-weight: bold; color: #2e7d32;">212%</div>
-                        <div>Compute Capacity Increase</div>
+                    <div class="metric-item">
+                        <div class="metric-value">212%</div>
+                        <div class="metric-label">Compute Capacity Increase</div>
                     </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; font-weight: bold; color: #2e7d32;">40+</div>
-                        <div>Microservices Deployed</div>
+                    <div class="metric-item">
+                        <div class="metric-value">40+</div>
+                        <div class="metric-label">Microservices Deployed</div>
                     </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; font-weight: bold; color: #2e7d32;">500+</div>
-                        <div>Peak Concurrent DB Connections</div>
+                    <div class="metric-item">
+                        <div class="metric-value">500+</div>
+                        <div class="metric-label">Peak Concurrent DB Connections</div>
                     </div>
                 </div>
             </div>
 
             <h3>Monthly AWS Investment Growth</h3>
 
-            <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
-                <tr style="border-bottom: 2px solid #ddd;">
-                    <th style="text-align: left; padding: 0.75rem;">Period</th>
-                    <th style="text-align: right; padding: 0.75rem;">Monthly AWS Spend</th>
-                    <th style="text-align: right; padding: 0.75rem;">Growth</th>
-                </tr>
-                <tr style="border-bottom: 1px solid #eee;">
-                    <td style="padding: 0.75rem;">January 2025 (Baseline)</td>
-                    <td style="text-align: right; padding: 0.75rem;">$28,260</td>
-                    <td style="text-align: right; padding: 0.75rem;">&mdash;</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #eee;">
-                    <td style="padding: 0.75rem;">April 2025</td>
-                    <td style="text-align: right; padding: 0.75rem;">$34,862</td>
-                    <td style="text-align: right; padding: 0.75rem;">+23%</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #eee;">
-                    <td style="padding: 0.75rem;">July 2025 (Peak)</td>
-                    <td style="text-align: right; padding: 0.75rem;">$157,315</td>
-                    <td style="text-align: right; padding: 0.75rem;">+457%</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #eee;">
-                    <td style="padding: 0.75rem;">October 2025</td>
-                    <td style="text-align: right; padding: 0.75rem;">$59,190</td>
-                    <td style="text-align: right; padding: 0.75rem;">+109%</td>
-                </tr>
-                <tr>
-                    <td style="padding: 0.75rem;"><strong>January 2026</strong></td>
-                    <td style="text-align: right; padding: 0.75rem;"><strong>$57,846</strong></td>
-                    <td style="text-align: right; padding: 0.75rem;"><strong>+105% YoY</strong></td>
-                </tr>
+            <table class="data-table data-table--dark">
+                <thead>
+                    <tr>
+                        <th>Period</th>
+                        <th class="text-right">Monthly AWS Spend</th>
+                        <th class="text-right">Growth</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>January 2025 (Baseline)</td>
+                        <td class="text-right">$28,260</td>
+                        <td class="text-right">&mdash;</td>
+                    </tr>
+                    <tr>
+                        <td>April 2025</td>
+                        <td class="text-right">$34,862</td>
+                        <td class="text-right">+23%</td>
+                    </tr>
+                    <tr>
+                        <td>July 2025 (Peak)</td>
+                        <td class="text-right">$157,315</td>
+                        <td class="text-right">+457%</td>
+                    </tr>
+                    <tr>
+                        <td>October 2025</td>
+                        <td class="text-right">$59,190</td>
+                        <td class="text-right">+109%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>January 2026</strong></td>
+                        <td class="text-right"><strong>$57,846</strong></td>
+                        <td class="text-right"><strong>+105% YoY</strong></td>
+                    </tr>
+                </tbody>
             </table>
 
             <p><em>Note: The July 2025 spike reflects a major platform expansion and promotional event that required temporary infrastructure scaling.</em></p>
 
             <h3>Service-Level Growth (January 2025 vs January 2026)</h3>
 
-            <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
-                <tr style="border-bottom: 2px solid #ddd;">
-                    <th style="text-align: left; padding: 0.75rem;">AWS Service</th>
-                    <th style="text-align: right; padding: 0.75rem;">Jan 2025</th>
-                    <th style="text-align: right; padding: 0.75rem;">Jan 2026</th>
-                    <th style="text-align: right; padding: 0.75rem;">Growth</th>
-                </tr>
-                <tr style="border-bottom: 1px solid #eee;">
-                    <td style="padding: 0.75rem;">Amazon RDS (Aurora)</td>
-                    <td style="text-align: right; padding: 0.75rem;">$13,094</td>
-                    <td style="text-align: right; padding: 0.75rem;">$22,401</td>
-                    <td style="text-align: right; padding: 0.75rem;">+71%</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #eee;">
-                    <td style="padding: 0.75rem;">Amazon ECS</td>
-                    <td style="text-align: right; padding: 0.75rem;">$4,374</td>
-                    <td style="text-align: right; padding: 0.75rem;">$9,341</td>
-                    <td style="text-align: right; padding: 0.75rem;">+114%</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #eee;">
-                    <td style="padding: 0.75rem;">CloudWatch</td>
-                    <td style="text-align: right; padding: 0.75rem;">$1,034</td>
-                    <td style="text-align: right; padding: 0.75rem;">$5,806</td>
-                    <td style="text-align: right; padding: 0.75rem;">+462%</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #eee;">
-                    <td style="padding: 0.75rem;">ElastiCache</td>
-                    <td style="text-align: right; padding: 0.75rem;">$1,915</td>
-                    <td style="text-align: right; padding: 0.75rem;">$3,088</td>
-                    <td style="text-align: right; padding: 0.75rem;">+61%</td>
-                </tr>
-                <tr>
-                    <td style="padding: 0.75rem;">Redshift</td>
-                    <td style="text-align: right; padding: 0.75rem;">$1,637</td>
-                    <td style="text-align: right; padding: 0.75rem;">$3,644</td>
-                    <td style="text-align: right; padding: 0.75rem;">+123%</td>
-                </tr>
+            <table class="data-table data-table--dark">
+                <thead>
+                    <tr>
+                        <th>AWS Service</th>
+                        <th class="text-right">Jan 2025</th>
+                        <th class="text-right">Jan 2026</th>
+                        <th class="text-right">Growth</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Amazon RDS (Aurora)</td>
+                        <td class="text-right">$13,094</td>
+                        <td class="text-right">$22,401</td>
+                        <td class="text-right">+71%</td>
+                    </tr>
+                    <tr>
+                        <td>Amazon ECS</td>
+                        <td class="text-right">$4,374</td>
+                        <td class="text-right">$9,341</td>
+                        <td class="text-right">+114%</td>
+                    </tr>
+                    <tr>
+                        <td>CloudWatch</td>
+                        <td class="text-right">$1,034</td>
+                        <td class="text-right">$5,806</td>
+                        <td class="text-right">+462%</td>
+                    </tr>
+                    <tr>
+                        <td>ElastiCache</td>
+                        <td class="text-right">$1,915</td>
+                        <td class="text-right">$3,088</td>
+                        <td class="text-right">+61%</td>
+                    </tr>
+                    <tr>
+                        <td>Redshift</td>
+                        <td class="text-right">$1,637</td>
+                        <td class="text-right">$3,644</td>
+                        <td class="text-right">+123%</td>
+                    </tr>
+                </tbody>
             </table>
 
             <h2>Current Infrastructure</h2>
@@ -305,9 +318,9 @@
 
             <h2>Key Takeaways</h2>
 
-            <div style="background: #fff3cd; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
-                <h4 style="margin-top: 0;">Lessons Learned</h4>
-                <ol class="blog-list" style="margin-bottom: 0;">
+            <div class="info-box info-box--warning">
+                <h4>Lessons Learned</h4>
+                <ol class="blog-list">
                     <li><strong>Start with the database:</strong> DMS enables zero-downtime migration for PostgreSQL</li>
                     <li><strong>Containerize incrementally:</strong> Break monoliths into services over time, not all at once</li>
                     <li><strong>Invest in observability early:</strong> CloudWatch costs scale with usage, but visibility is essential</li>
@@ -337,7 +350,7 @@
     </div>
 </section>
 
-<section class="footer">
+<footer class="footer">
     <div class="container">
         <div class="footer-text">
             <h2>Horus Technology</h2>
@@ -349,12 +362,12 @@
             </div>
         </div>
         <div class="icons">
-            <a href="https://www.linkedin.com/company/ushorus-technologies" target="_blank">
-                <img src="../assets/brands/linkedin.svg" alt="LinkedIn">
+            <a href="https://www.linkedin.com/company/ushorus-technologies" target="_blank" rel="noopener noreferrer">
+                <img src="../assets/brands/linkedin.svg" alt="LinkedIn" width="24" height="24">
             </a>
         </div>
     </div>
-</section>
+</footer>
 
 <script>
     const menuToggle = document.querySelector('.menu-toggle');

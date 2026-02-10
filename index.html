@@ -70,20 +70,30 @@
     }
     </script>
 
+    <!-- Preconnect hints for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
     <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
 
     <!-- Favicon -->
-    <link rel="icon" href="assets/icons/horus-icon.svg" type="image/x-icon">
+    <link rel="icon" href="assets/icons/horus-icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/icons/horus-icon.svg">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto:400,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <!-- Navigation Bar -->
-<header>
+<header role="banner">
     <nav class="navbar">
         <div class="container">
             <a href="#" class="logo"><img width="52" height="52" src="assets/icons/horus-icon.svg" /> <p>Horus Technologies</p></a>
@@ -94,19 +104,19 @@
                 <li><a href="blog/blog.html">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
+            <div class="menu-toggle" aria-label="Open mobile menu" role="button" tabindex="0">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </div>
         </div>
     </nav>
 </header>
 
+<main id="main-content">
 <!-- Hero Section -->
-<section class="hero">
+<section class="hero" aria-labelledby="hero-heading">
     <div class="container">
         <div class="hero-text">
-            <h1>Power Your Business</h1>
-            <h1>with Cloud and AI</h1>
+            <h1 id="hero-heading">Power Your Business<br>with Cloud and AI</h1>
             <h4>From strategy to implementation — we build
             <br>scalable, intelligent solutions that drive results</h4>
             
@@ -169,10 +179,10 @@
 </section>
 
 <!-- About Us Section -->
-<section id="about" class="about">
+<section id="about" class="about" aria-labelledby="about-heading">
     <div class="container">
         <div class="about-text">
-            <h2 class="section-header">What We Do</h2>
+            <h2 id="about-heading" class="section-header">What We Do</h2>
             <p>Our technologists, strategists, and designers create powerful digital experiences <br/> worldwide, solving our
                 customers' toughest challenges</p>
         </div>
@@ -228,10 +238,10 @@
 </section>
 
 <!-- Our Services Section -->
-<section id="stories" class="stories">
+<section id="stories" class="stories" aria-labelledby="stories-heading">
     <div class="stories-container">
         <div class="stories-text">
-            <h2 class="section-header">Explore our stories and insights</h2>
+            <h2 id="stories-heading" class="section-header">Explore our stories and insights</h2>
             <p>Inspire bold ideas, accelerate progress, and create a better future for everyone</p>
         </div>
         <div class="stories-cards">
@@ -244,7 +254,7 @@
                                 <p class="category">Enterprise Services</p>
                             </div>
                             <p>Manual document processing was slow and error-prone. Horus Technology implemented an automated workflow using AWS Textract to extract data, Comprehend for text analysis, and Amazon A2I for human-in-the-loop validation. Step Functions orchestrated the process, ensuring accuracy in complex document workflows while significantly reducing processing time. Data was then stored in a structured database for seamless access</p>
-                            <a href="https://www.ricoh-usa.com" target="_blank" class="link">ricoh-usa.com</a>
+                            <a href="https://www.ricoh-usa.com" target="_blank" rel="noopener noreferrer" class="link">ricoh-usa.com</a>
                         </div>
                     </div>
 
@@ -255,7 +265,7 @@
                                 <p class="category">Manufacturing</p>
                             </div>
                             <p>Tracking vehicles during transport was a manual and time-consuming process. An automated system was implemented to extract shipping manifest data from Excel files using AWS Textract, map vehicle details, and integrate with a third-party API for real-time tracking across trucks and ships</p>
-                            <a href="https://www.porsche.com" target="_blank" class="link">porsche.com</a>
+                            <a href="https://www.porsche.com" target="_blank" rel="noopener noreferrer" class="link">porsche.com</a>
                         </div>
                     </div>
 
@@ -266,7 +276,7 @@
                                 <p class="category">Manufacturing</p>
                             </div>
                             <p>Safety manuals needed translation from German to every country's language. We implemented an automated pipeline using AWS Textract for PDF ingestion and Amazon Translate for multi-language conversion, streamlining global compliance documentation</p>
-                            <a href="https://volkswagen.com" target="_blank" class="link">volkswagen.com</a>
+                            <a href="https://volkswagen.com" target="_blank" rel="noopener noreferrer" class="link">volkswagen.com</a>
                         </div>
                     </div>
 
@@ -277,7 +287,7 @@
                                 <p class="category">Education</p>
                             </div>
                             <p>Course catalog data from 500+ institutions lacked standardization. Our AI-driven solution using Bedrock automated parsing, validation, and storage—achieving 80% processing time reduction, 95% data accuracy, and $800K annual labor cost savings with 180% ROI in 14 months</p>
-                            <a href="https://degreedata.com" target="_blank" class="link">degreedata.com</a>
+                            <a href="https://degreedata.com" target="_blank" rel="noopener noreferrer" class="link">degreedata.com</a>
                         </div>
                     </div>
 
@@ -288,7 +298,7 @@
                                 <p class="category">Financial services</p>
                             </div>
                             <p>Manual document processing was slow and error-prone, causing delays in operations. An Horus Technology AI-driven solution automated text extraction, classification, and routing using Textract, Comprehend, and A2I, seamlessly integrating with internal systems for improved efficiency and accuracy</p>
-                            <a href="https://ford.com" target="_blank" class="link">ford.com</a>
+                            <a href="https://ford.com" target="_blank" rel="noopener noreferrer" class="link">ford.com</a>
                         </div>
                     </div>
 
@@ -299,7 +309,7 @@
                                 <p class="category">Financial Services</p>
                             </div>
                             <p>Loan processing took 5-7 days with manual reviews. Our Bedrock-powered solution extracts handwritten text with 92% accuracy, reducing processing to 1.5-2 days—a 65% improvement delivering $2.1M annual operational savings with 40% cost reduction</p>
-                            <a href="https://bmo.com" target="_blank" class="link">bmo.com</a>
+                            <a href="https://bmo.com" target="_blank" rel="noopener noreferrer" class="link">bmo.com</a>
                         </div>
                     </div>
 
@@ -310,7 +320,7 @@
                                 <p class="category">Financial services/ Real Estate</p>
                             </div>
                             <p>Rental application evaluations were slow and manual. Horus Technology implemented an automated system using Textract to process pre-classified documents, run calculations, and execute approval/denial decisions through If/Else Lambdas, enabling instant processing</p>
-                            <a href="https://gppropertymanagement.co.uk" target="_blank" class="link">gppropertymanagement.co.uk</a>
+                            <a href="https://gppropertymanagement.co.uk" target="_blank" rel="noopener noreferrer" class="link">gppropertymanagement.co.uk</a>
                         </div>
                     </div>
 
@@ -321,7 +331,7 @@
                                 <p class="category">Compliance</p>
                             </div>
                             <p>Matching VINs across purchase documents and agreements was manual and error-prone. Horus Technology implemented an automated system using Textract for data extraction, DynamoDB for mapping, and Lambda triggers to ensure accurate and efficient VIN verification</p>
-                            <a href="https://experian.com" target="_blank" class="link">experian.com</a>
+                            <a href="https://experian.com" target="_blank" rel="noopener noreferrer" class="link">experian.com</a>
                         </div>
                     </div>
 
@@ -332,7 +342,7 @@
                                 <p class="category">Human Resources</p>
                             </div>
                             <p>Horus Technology developed a multi-tenant HR application integrating video interviewing, resume parsing, and automated candidate workflows for seamless hiring processes</p>
-                            <a href="https://aspirehr.com" target="_blank" class="link">aspirehr.com</a>
+                            <a href="https://aspirehr.com" target="_blank" rel="noopener noreferrer" class="link">aspirehr.com</a>
                         </div>
                     </div>
 
@@ -343,7 +353,7 @@
                                 <p class="category">Purchase Order</p>
                             </div>
                             <p>Horus Technology developed an automated system using Textract, A2I, and Lambda Routing to match and reconcile purchase orders with received goods and invoices, ensuring accuracy and efficiency</p>
-                            <a href="https://samtec.com" target="_blank" class="link">samtec.com</a>
+                            <a href="https://samtec.com" target="_blank" rel="noopener noreferrer" class="link">samtec.com</a>
                         </div>
                     </div>
 
@@ -369,11 +379,11 @@
 </section>
 
 <!-- Contact Us Section -->
-<section id="contact" class="contact">
+<section id="contact" class="contact" aria-labelledby="contact-heading">
     <div class="container">
         <div class="contact-text">
-            <h4> Ready to transform your cloud strategy?</h4>
-            <h1> Let’s talk</h1>
+            <h4>Ready to transform your cloud strategy?</h4>
+            <h2 id="contact-heading">Let's talk</h2>
         </div>
         <div class="contact-form-container">
             <div class="contact-info">
@@ -410,8 +420,9 @@
         </div>
     </div>
 </section>
+</main>
 
-<section class="footer">
+<footer class="footer" role="contentinfo">
     <div class="container">
         <div class="footer-text">
             <h2>Horus Technology</h2>
@@ -423,12 +434,12 @@
             </div>
         </div>
         <div class="icons">
-            <a href="https://www.linkedin.com/company/ushorus-technologies" target="_blank">
-                <img src="assets/brands/linkedin.svg" alt="LinkedIn">
+            <a href="https://www.linkedin.com/company/ushorus-technologies" target="_blank" rel="noopener noreferrer" aria-label="Visit Horus Technology on LinkedIn">
+                <img src="assets/brands/linkedin.svg" alt="LinkedIn" width="24" height="24">
             </a>
         </div>
     </div>
-</section>
+</footer>
 
 <!-- JavaScript for Responsive Menu -->
 <script>

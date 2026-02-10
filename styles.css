@@ -284,6 +284,7 @@ body {
 
 /*About section*/
 .about {
+    background-color: #111;  /* Fallback for dark background */
     background-image: url('assets/about-bg.png');
     background-size: cover;
     background-position: center;
@@ -378,6 +379,7 @@ body {
 
 /* Stories Section */
 .stories {
+    background-color: #111;  /* Fallback for dark background */
     background-image: url('assets/stories-bg.svg');
     background-size: cover;
     background-position: center;
@@ -456,7 +458,8 @@ body {
    color: #FFFFFF;
 }
 
-.contact-text h1 {
+.contact-text h1,
+.contact-text h2 {
     font-size: 64px;
     font-weight: 400;
     background: linear-gradient(10deg, #19FB9B, #8C01FA);
@@ -880,7 +883,8 @@ body {
         max-width: 100%;
     }
 
-    .contact-text h1 {
+    .contact-text h1,
+    .contact-text h2 {
         font-size: 48px;
     }
 
@@ -1273,6 +1277,7 @@ body {
     margin-bottom: 24px;
 }
 
+
 .blog-post-article h2 {
     font-size: 2.2em;
     font-weight: 700;
@@ -1292,6 +1297,168 @@ body {
     color: #FFFFFF;
     margin-top: 36px;
     margin-bottom: 16px;
+}
+
+/* Code blocks in blog posts */
+.code-block {
+    background: #1a1a1a;
+    color: #e6e6e6;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    border-radius: 6px;
+    padding: 1.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border: 1px solid #333;
+}
+
+.code-block code {
+    background: transparent;
+    color: #e6e6e6;
+    font-family: inherit;
+    padding: 0;
+}
+
+.blog-post-article code {
+    background: #1a1a1a;
+    color: #e6e6e6;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    border-radius: 4px;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.9em;
+}
+
+/* Info boxes in blog posts */
+.info-box {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.info-box h4 {
+    margin-top: 0;
+    color: #111;
+}
+
+.info-box p {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.info-box p:last-child {
+    margin-bottom: 0;
+}
+
+.info-box .monospace {
+    font-family: monospace;
+    line-height: 2;
+}
+
+.info-box--warning {
+    background: #fff3cd;
+}
+
+.info-box--warning h4 {
+    color: #856404;
+}
+
+/* Data tables in blog posts */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.data-table th,
+.data-table td {
+    text-align: left;
+    padding: 0.75rem;
+    color: #333;
+}
+
+.data-table thead tr {
+    border-bottom: 2px solid #ddd;
+}
+
+.data-table th {
+    font-weight: 600;
+    color: #111;
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid #eee;
+}
+
+.data-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.data-table .text-right {
+    text-align: right;
+}
+
+/* Dark variant for tables on dark backgrounds */
+.data-table--dark {
+    background: #1a1a1a;
+    border-radius: 8px;
+}
+
+.data-table--dark th,
+.data-table--dark td {
+    color: #C4C4C4;
+}
+
+.data-table--dark th {
+    color: #fff;
+}
+
+.data-table--dark thead tr {
+    border-bottom: 2px solid #333;
+}
+
+.data-table--dark tbody tr {
+    border-bottom: 1px solid #333;
+}
+
+/* Metrics boxes */
+.metrics-box {
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.metrics-box h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.metrics-box--success {
+    background: #e8f5e9;
+}
+
+.metrics-box--success h3 {
+    color: #1b5e20;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.metric-item {
+    text-align: center;
+}
+
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.metric-label {
+    color: #333;
+    margin-top: 0.5rem;
 }
 
 .blog-list {
@@ -1360,6 +1527,302 @@ body {
 
 .blog-back-link-bottom:hover {
     color: #19FB9B;
+}
+
+/* ==========================================
+   SERVICES PAGE STYLES
+   ========================================== */
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Service Cards */
+.service-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #FF9900;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.service-card h3 {
+    margin-bottom: 1rem;
+    color: #111;
+}
+
+.service-card p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.service-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.service-card ul li {
+    padding: 0.5rem 0;
+    color: #666;
+    border-bottom: 1px solid #eee;
+}
+
+.service-card ul li:last-child {
+    border-bottom: none;
+}
+
+.service-card ul li i {
+    color: #FF9900;
+    margin-right: 0.5rem;
+}
+
+.service-card .learn-more {
+    color: #FF9900;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.service-card .learn-more:hover {
+    text-decoration: underline;
+}
+
+/* Service Card Color Variants */
+.service-card--purple {
+    border-left-color: #7B2FBE;
+}
+
+.service-card--teal {
+    border-left-color: #00A4BD;
+}
+
+.service-card--blue {
+    border-left-color: #1a73e8;
+}
+
+.service-card--green {
+    border-left-color: #28a745;
+}
+
+.service-card--red {
+    border-left-color: #dc3545;
+}
+
+/* Certification Badges */
+.cert-badge {
+    display: inline-block;
+    background: #232F3E;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    margin: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.cert-badge i {
+    margin-right: 0.5rem;
+}
+
+/* Stats Section */
+.stats-section {
+    background: #111;
+    padding: 4rem 0;
+    margin: 4rem 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.stat-item h2 {
+    font-size: 3rem;
+    color: #FF9900;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+    color: #ccc;
+}
+
+/* Industries Section */
+.industries-section {
+    padding: 4rem 0;
+    background: #f9f9f9;
+}
+
+.industry-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.industry-tag {
+    background: #fff;
+    border: 2px solid #FF9900;
+    color: #111;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 500;
+}
+
+.industry-tag i {
+    margin-right: 0.5rem;
+}
+
+/* Services Page Hero */
+.services-hero {
+    min-height: auto;
+    padding: 160px 20px 80px;
+    display: flex;
+    align-items: center;
+}
+
+.services-hero .hero-text {
+    margin-bottom: 0;
+}
+
+/* Certifications Section */
+.certifications-section {
+    padding: 3rem 0;
+    background: #f9f9f9;
+}
+
+.certifications-section .section-content {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.certifications-section h2 {
+    margin-bottom: 1rem;
+    color: #111;
+}
+
+.certifications-section p {
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cert-badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Services Catalog Section */
+.services-catalog {
+    padding: 4rem 0;
+    background: #000;
+}
+
+.services-catalog .section-content {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.services-catalog .section-content p {
+    color: #C4C4C4;
+}
+
+/* Featured Clients Section */
+.featured-clients {
+    padding: 4rem 0;
+    background: #000;
+}
+
+.featured-clients .section-content {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.featured-clients h2 {
+    color: #fff;
+}
+
+.featured-clients p {
+    color: #C4C4C4;
+}
+
+/* AWS Technologies Section */
+.aws-technologies {
+    padding: 4rem 0;
+    background: #f9f9f9;
+}
+
+.aws-technologies .section-content {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.aws-technologies h2 {
+    color: #111;
+}
+
+.aws-technologies > .container > p {
+    color: #555;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.tech-item {
+    padding: 1.5rem;
+}
+
+.tech-item i {
+    font-size: 2rem;
+    color: #FF9900;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.tech-item h4 {
+    color: #111;
+}
+
+.tech-item p {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Industries Section Text */
+.industries-section .section-content {
+    text-align: center;
+}
+
+.industries-section h2 {
+    margin-bottom: 1rem;
+    color: #111;
+}
+
+.industries-section > .container > p {
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* Blog Responsive Styles */

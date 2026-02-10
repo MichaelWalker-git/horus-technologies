@@ -49,10 +49,27 @@
     }
     </script>
 
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="assets/icons/horus-icon.svg" type="image/x-icon">
+    <link rel="icon" href="assets/icons/horus-icon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto:400,700&display=swap" rel="stylesheet">
+
+    <!-- BreadcrumbList Schema for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.horustech.dev/"},
+        {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.horustech.dev/services.html"},
+        {"@type": "ListItem", "position": 3, "name": "AWS Consulting San Diego", "item": "https://www.horustech.dev/aws-consulting-san-diego.html"}
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -61,12 +78,16 @@
         <div class="container">
             <a href="/" class="logo"><img width="52" height="52" src="assets/icons/horus-icon.svg" /> <p>Horus Technologies</p></a>
             <ul class="nav-links">
+                <li><a href="/">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="/#about">What We Do</a></li>
                 <li><a href="/#stories">Our stories</a></li>
                 <li><a href="blog/blog.html">Blog</a></li>
                 <li><a href="/#contact">Contact</a></li>
             </ul>
+            <div class="menu-toggle" aria-label="Open mobile menu" role="button" tabindex="0">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </div>
         </div>
     </nav>
 </header>
@@ -74,8 +95,7 @@
 <section class="hero">
     <div class="container">
         <div class="hero-text">
-            <h1>AWS Consulting</h1>
-            <h1>in San Diego</h1>
+            <h1>AWS Consulting<br>in San Diego</h1>
             <h4>Expert cloud consulting from former AWS engineers.<br>We help San Diego businesses migrate, optimize, and scale on AWS.</h4>
             <a href="#contact-form" style="display: inline-block; margin-top: 2rem; padding: 1rem 2rem; background: #FF9900; color: #000; text-decoration: none; font-weight: bold; border-radius: 4px;">Get Free Consultation</a>
         </div>
@@ -160,14 +180,24 @@
     </div>
 </section>
 
-<section class="footer">
+<footer class="footer">
     <div class="container">
         <div class="footer-text">
             <h2>Horus Technology</h2>
             <p>&copy; 2025 Horus Technology. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <span>|</span>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="icons">
+            <a href="https://www.linkedin.com/company/ushorus-technologies" target="_blank" rel="noopener noreferrer">
+                <img src="assets/brands/linkedin.svg" alt="LinkedIn" width="24" height="24">
+            </a>
         </div>
     </div>
-</section>
+</footer>
 
 <script>
 document.getElementById('contact-form-aws').addEventListener('submit', function (e) {

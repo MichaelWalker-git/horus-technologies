@@ -92,7 +92,7 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="../styles.css">
-    <link rel="icon" href="../assets/icons/horus-icon.svg" type="image/x-icon">
+    <link rel="icon" href="../assets/icons/horus-icon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
@@ -103,14 +103,15 @@
         <div class="container">
             <a href="../index.html" class="logo"><img width="52" height="52" src="../assets/icons/horus-icon.svg" /> <p>Horus Technologies</p></a>
             <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
                 <li><a href="../services.html">Services</a></li>
                 <li><a href="../index.html#about">What We Do</a></li>
                 <li><a href="../index.html#stories">Our stories</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="../index.html#contact">Contact</a></li>
             </ul>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
+            <div class="menu-toggle" aria-label="Open mobile menu" role="button" tabindex="0">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </div>
         </div>
     </nav>
@@ -159,7 +160,7 @@
 
             <h3>1. DetectDocumentText</h3>
             <p>Extracts raw text and word bounding boxes. Best for simple text extraction without structure.</p>
-            <pre style="background: #f5f5f5; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code>import boto3
+            <pre class="code-block"><code>import boto3
 
 client = boto3.client('textract')
 response = client.detect_document_text(
@@ -168,14 +169,14 @@ response = client.detect_document_text(
 
             <h3>2. AnalyzeDocument</h3>
             <p>Extracts forms (key-value pairs) and tables. Best for structured documents.</p>
-            <pre style="background: #f5f5f5; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code>response = client.analyze_document(
+            <pre class="code-block"><code>response = client.analyze_document(
     Document={'S3Object': {'Bucket': 'my-bucket', 'Name': 'form.pdf'}},
     FeatureTypes=['FORMS', 'TABLES']
 )</code></pre>
 
             <h3>3. AnalyzeExpense</h3>
             <p>Specialized for invoices and receipts. Automatically identifies vendor, line items, totals.</p>
-            <pre style="background: #f5f5f5; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code>response = client.analyze_expense(
+            <pre class="code-block"><code>response = client.analyze_expense(
     Document={'S3Object': {'Bucket': 'my-bucket', 'Name': 'invoice.pdf'}}
 )</code></pre>
 
@@ -183,9 +184,9 @@ response = client.detect_document_text(
 
             <p>For production workloads, we recommend this architecture:</p>
 
-            <div style="background: #f9f9f9; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
-                <h4 style="margin-top: 0;">Component Flow</h4>
-                <p style="font-family: monospace; line-height: 2;">
+            <div class="info-box">
+                <h4>Component Flow</h4>
+                <p class="monospace">
                     S3 (Input) &rarr; Lambda (Trigger) &rarr; Step Functions &rarr; Textract (Async) &rarr; SNS &rarr; Lambda (Process Results) &rarr; A2I (If needed) &rarr; DynamoDB/RDS (Store)
                 </p>
             </div>
@@ -202,7 +203,7 @@ response = client.detect_document_text(
 
             <p><strong>2. Asynchronous Processing</strong></p>
             <p>For documents over 1 page, use async APIs:</p>
-            <pre style="background: #f5f5f5; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code># Start async job
+            <pre class="code-block"><code># Start async job
 response = client.start_document_analysis(
     DocumentLocation={'S3Object': {'Bucket': 'bucket', 'Name': 'doc.pdf'}},
     FeatureTypes=['FORMS', 'TABLES'],
@@ -243,7 +244,7 @@ result = client.get_document_analysis(JobId=job_id)</code></pre>
 
             <h3>3. Handle Multi-Page Documents</h3>
             <p>For documents over 1 page, you must use async APIs. Results come in paginated blocks that need to be reassembled:</p>
-            <pre style="background: #f5f5f5; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code>def get_all_results(job_id):
+            <pre class="code-block"><code>def get_all_results(job_id):
     pages = []
     next_token = None
 
@@ -265,7 +266,7 @@ result = client.get_document_analysis(JobId=job_id)</code></pre>
 
             <h3>4. Structure Your Output</h3>
             <p>Textract returns raw blocks. Build helper functions to extract structured data:</p>
-            <pre style="background: #f5f5f5; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code>def extract_key_value_pairs(blocks):
+            <pre class="code-block"><code>def extract_key_value_pairs(blocks):
     key_map = {}
     value_map = {}
     block_map = {block['Id']: block for block in blocks}
@@ -313,7 +314,7 @@ result = client.get_document_analysis(JobId=job_id)</code></pre>
     </div>
 </section>
 
-<section class="footer">
+<footer class="footer">
     <div class="container">
         <div class="footer-text">
             <h2>Horus Technology</h2>
@@ -325,12 +326,12 @@ result = client.get_document_analysis(JobId=job_id)</code></pre>
             </div>
         </div>
         <div class="icons">
-            <a href="https://www.linkedin.com/company/ushorus-technologies" target="_blank">
-                <img src="../assets/brands/linkedin.svg" alt="LinkedIn">
+            <a href="https://www.linkedin.com/company/ushorus-technologies" target="_blank" rel="noopener noreferrer">
+                <img src="../assets/brands/linkedin.svg" alt="LinkedIn" width="24" height="24">
             </a>
         </div>
     </div>
-</section>
+</footer>
 
 <script>
     const menuToggle = document.querySelector('.menu-toggle');

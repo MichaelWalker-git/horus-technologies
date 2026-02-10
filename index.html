@@ -74,29 +74,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
     
     <!-- DNS Prefetch -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
 
-    <!-- External CSS -->
+    <!-- Critical CSS -->
     <link rel="stylesheet" href="styles.css">
 
     <!-- Favicon -->
     <link rel="icon" href="assets/icons/horus-icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="assets/icons/horus-icon.svg">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome - Non-render-blocking -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Google Fonts - Non-render-blocking -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap"></noscript>
 </head>
 <body>
 <!-- Navigation Bar -->
 <header role="banner">
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo"><img width="52" height="52" src="assets/icons/horus-icon.svg" /> <p>Horus Technologies</p></a>
+            <a href="#" class="logo"><img width="52" height="52" src="assets/icons/horus-icon.svg" alt="Horus Technology logo"> <p>Horus Technologies</p></a>
             <ul class="nav-links">
                 <li><a href="services.html">Services</a></li>
                 <li><a href="#about">What We Do</a></li>
@@ -154,24 +157,23 @@
             <p>Trusted by Leading Companies Worldwide</p>
             <div class="logo-carousel">
                 <div class="logo-track">
-                    <img src="assets/brands/aspire.png" alt="AspireHR logo - Horus Technology HR tech client" loading="lazy">
-                    <img src="assets/brands/BMO.png" alt="Bank of Montreal logo - Horus Technology financial services client" loading="lazy">
-                    <img src="assets/brands/samtec.png" alt="Samtec logo - Horus Technology manufacturing client" loading="lazy">
-                    <img src="assets/brands/volkswagen.png" alt="Volkswagen logo - Horus Technology automotive client" loading="lazy">
-                    <img src="assets/brands/ford.png" alt="Ford Credit logo - Horus Technology financial services client" loading="lazy">
-                    <img src="assets/brands/experian.png" alt="Experian logo - Horus Technology compliance client" loading="lazy">
-                    <img src="assets/brands/ricoh.png" alt="Ricoh logo - Horus Technology enterprise services client" loading="lazy">
-                    <img src="assets/brands/Property.png" alt="GP Property Management logo - Horus Technology real estate client" loading="lazy">
+                    <img src="assets/brands/aspire.png" alt="AspireHR logo" width="120" height="40" loading="lazy">
+                    <img src="assets/brands/BMO.png" alt="Bank of Montreal logo" width="120" height="40" loading="lazy">
+                    <img src="assets/brands/samtec.png" alt="Samtec logo" width="120" height="40" loading="lazy">
+                    <img src="assets/brands/volkswagen.png" alt="Volkswagen logo" width="120" height="40" loading="lazy">
+                    <img src="assets/brands/ford.png" alt="Ford Credit logo" width="120" height="40" loading="lazy">
+                    <img src="assets/brands/experian.png" alt="Experian logo" width="120" height="40" loading="lazy">
+                    <img src="assets/brands/ricoh.png" alt="Ricoh logo" width="120" height="40" loading="lazy">
+                    <img src="assets/brands/Property.png" alt="GP Property Management logo" width="120" height="40" loading="lazy">
 
-
-                    <img src="assets/brands/aspire.png" alt="AspireHR logo - Horus Technology HR tech client" loading="lazy">
-                    <img src="assets/brands/BMO.png" alt="Bank of Montreal logo - Horus Technology financial services client" loading="lazy">
-                    <img src="assets/brands/samtec.png" alt="Samtec logo - Horus Technology manufacturing client" loading="lazy">
-                    <img src="assets/brands/volkswagen.png" alt="Volkswagen logo - Horus Technology automotive client" loading="lazy">
-                    <img src="assets/brands/ford.png" alt="Ford Credit logo - Horus Technology financial services client" loading="lazy">
-                    <img src="assets/brands/experian.png" alt="Experian logo - Horus Technology compliance client" loading="lazy">
-                    <img src="assets/brands/ricoh.png" alt="Ricoh logo - Horus Technology enterprise services client" loading="lazy">
-                    <img src="assets/brands/Property.png" alt="GP Property Management logo - Horus Technology real estate client" loading="lazy">
+                    <img src="assets/brands/aspire.png" alt="AspireHR logo" width="120" height="40" loading="lazy">
+                    <img src="assets/brands/BMO.png" alt="Bank of Montreal logo" width="120" height="40" loading="lazy">
+                    <img src="assets/brands/samtec.png" alt="Samtec logo" width="120" height="40" loading="lazy">
+                    <img src="assets/brands/volkswagen.png" alt="Volkswagen logo" width="120" height="40" loading="lazy">
+                    <img src="assets/brands/ford.png" alt="Ford Credit logo" width="120" height="40" loading="lazy">
+                    <img src="assets/brands/experian.png" alt="Experian logo" width="120" height="40" loading="lazy">
+                    <img src="assets/brands/ricoh.png" alt="Ricoh logo" width="120" height="40" loading="lazy">
+                    <img src="assets/brands/Property.png" alt="GP Property Management logo" width="120" height="40" loading="lazy">
                 </div>
             </div>
         </div>
@@ -196,7 +198,7 @@
                         As a leading AWS consulting firm, we provide deep cloud expertise to help businesses optimise,
                         scale, and innovate
                     </p>
-                    <a href="aws-consulting-san-diego.html" style="color: #FF9900; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 1rem;">Learn more &rarr;</a>
+                    <a href="aws-consulting-san-diego.html" class="card-link">Learn more &rarr;</a>
                 </div>
                 <div class="card">
                     <div>
@@ -207,7 +209,7 @@
                     <p>
                         Automate document extraction, classification, and processing with 99%+ accuracy using AWS Textract, Comprehend, and AI.
                     </p>
-                    <a href="intelligent-document-processing.html" style="color: #FF9900; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 1rem;">Learn more &rarr;</a>
+                    <a href="intelligent-document-processing.html" class="card-link">Learn more &rarr;</a>
                 </div>
             </div>
             <div>
@@ -221,7 +223,7 @@
                         Our team, led by former AWS engineers, specializes in cutting-edge AI and ML solutions that
                         drive automation and intelligence
                     </p>
-                    <a href="generative-ai-services.html" style="color: #FF9900; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 1rem;">Learn more &rarr;</a>
+                    <a href="generative-ai-services.html" class="card-link">Learn more &rarr;</a>
                 </div>
                 <div class="card">
                     <div>
@@ -229,7 +231,7 @@
                         <h3>Industry Solutions</h3>
                     </div>
                     <p>
-                        Purpose-built AI solutions for <a href="financial-services-ai.html" style="color: #FF9900;">Financial Services</a> and <a href="manufacturing-automation.html" style="color: #FF9900;">Manufacturing</a> industries.
+                        Purpose-built AI solutions for <a href="financial-services-ai.html" class="inline-link">Financial Services</a> and <a href="manufacturing-automation.html" class="inline-link">Manufacturing</a> industries.
                     </p>
                 </div>
             </div>
@@ -250,7 +252,7 @@
                     <div class="carousel-card active">
                         <div class="carousel-content">
                             <div class="card-header">
-                                <img src="assets/brands/ricoh.png" alt="Ricoh logo - enterprise document processing case study" loading="lazy">
+                                <img src="assets/brands/ricoh.png" alt="Ricoh logo" width="100" height="35" loading="lazy">
                                 <p class="category">Enterprise Services</p>
                             </div>
                             <p>Manual document processing was slow and error-prone. Horus Technology implemented an automated workflow using AWS Textract to extract data, Comprehend for text analysis, and Amazon A2I for human-in-the-loop validation. Step Functions orchestrated the process, ensuring accuracy in complex document workflows while significantly reducing processing time. Data was then stored in a structured database for seamless access</p>
@@ -261,7 +263,7 @@
                     <div class="carousel-card">
                         <div class="carousel-content">
                             <div class="card-header">
-                                <img src="assets/brands/Porsche.png" alt="Porsche Digital logo - vehicle tracking automation case study" loading="lazy">
+                                <img src="assets/brands/Porsche.png" alt="Porsche Digital logo" width="100" height="35" loading="lazy">
                                 <p class="category">Manufacturing</p>
                             </div>
                             <p>Tracking vehicles during transport was a manual and time-consuming process. An automated system was implemented to extract shipping manifest data from Excel files using AWS Textract, map vehicle details, and integrate with a third-party API for real-time tracking across trucks and ships</p>
@@ -272,7 +274,7 @@
                     <div class="carousel-card">
                         <div class="carousel-content">
                             <div class="card-header">
-                                <img src="assets/brands/volkswagen.png" alt="Volkswagen logo - document translation automation case study" loading="lazy">
+                                <img src="assets/brands/volkswagen.png" alt="Volkswagen logo" width="100" height="35" loading="lazy">
                                 <p class="category">Manufacturing</p>
                             </div>
                             <p>Safety manuals needed translation from German to every country's language. We implemented an automated pipeline using AWS Textract for PDF ingestion and Amazon Translate for multi-language conversion, streamlining global compliance documentation</p>
@@ -283,7 +285,7 @@
                     <div class="carousel-card">
                         <div class="carousel-content">
                             <div class="card-header">
-                                <img src="assets/brands/Degreedata.png" alt="DegreeData logo - course catalog automation case study" loading="lazy">
+                                <img src="assets/brands/Degreedata.png" alt="DegreeData logo" width="100" height="35" loading="lazy">
                                 <p class="category">Education</p>
                             </div>
                             <p>Course catalog data from 500+ institutions lacked standardization. Our AI-driven solution using Bedrock automated parsing, validation, and storage—achieving 80% processing time reduction, 95% data accuracy, and $800K annual labor cost savings with 180% ROI in 14 months</p>
@@ -294,7 +296,7 @@
                     <div class="carousel-card">
                         <div class="carousel-content">
                             <div class="card-header">
-                                <img src="assets/brands/ford.png" alt="Ford Credit logo - document routing automation case study" loading="lazy">
+                                <img src="assets/brands/ford.png" alt="Ford Credit logo" width="100" height="35" loading="lazy">
                                 <p class="category">Financial services</p>
                             </div>
                             <p>Manual document processing was slow and error-prone, causing delays in operations. An Horus Technology AI-driven solution automated text extraction, classification, and routing using Textract, Comprehend, and A2I, seamlessly integrating with internal systems for improved efficiency and accuracy</p>
@@ -305,7 +307,7 @@
                     <div class="carousel-card">
                         <div class="carousel-content">
                             <div class="card-header">
-                                <img src="assets/brands/BMO.png" alt="Bank of Montreal logo - loan processing automation case study" loading="lazy">
+                                <img src="assets/brands/BMO.png" alt="Bank of Montreal logo" width="100" height="35" loading="lazy">
                                 <p class="category">Financial Services</p>
                             </div>
                             <p>Loan processing took 5-7 days with manual reviews. Our Bedrock-powered solution extracts handwritten text with 92% accuracy, reducing processing to 1.5-2 days—a 65% improvement delivering $2.1M annual operational savings with 40% cost reduction</p>
@@ -316,7 +318,7 @@
                     <div class="carousel-card">
                         <div class="carousel-content">
                             <div class="card-header">
-                                <img src="assets/brands/Property.png" alt="GP Property Management logo - rental application automation case study" loading="lazy">
+                                <img src="assets/brands/Property.png" alt="GP Property Management logo" width="100" height="35" loading="lazy">
                                 <p class="category">Financial services/ Real Estate</p>
                             </div>
                             <p>Rental application evaluations were slow and manual. Horus Technology implemented an automated system using Textract to process pre-classified documents, run calculations, and execute approval/denial decisions through If/Else Lambdas, enabling instant processing</p>
@@ -327,7 +329,7 @@
                     <div class="carousel-card">
                         <div class="carousel-content">
                             <div class="card-header">
-                                <img src="assets/brands/experian.png" alt="Experian logo - VIN compliance automation case study" loading="lazy">
+                                <img src="assets/brands/experian.png" alt="Experian logo" width="100" height="35" loading="lazy">
                                 <p class="category">Compliance</p>
                             </div>
                             <p>Matching VINs across purchase documents and agreements was manual and error-prone. Horus Technology implemented an automated system using Textract for data extraction, DynamoDB for mapping, and Lambda triggers to ensure accurate and efficient VIN verification</p>
@@ -338,7 +340,7 @@
                     <div class="carousel-card">
                         <div class="carousel-content">
                             <div class="card-header">
-                                <img src="assets/brands/aspire.png" alt="AspireHR logo - HR automation case study" loading="lazy">
+                                <img src="assets/brands/aspire.png" alt="AspireHR logo" width="100" height="35" loading="lazy">
                                 <p class="category">Human Resources</p>
                             </div>
                             <p>Horus Technology developed a multi-tenant HR application integrating video interviewing, resume parsing, and automated candidate workflows for seamless hiring processes</p>
@@ -349,7 +351,7 @@
                     <div class="carousel-card">
                         <div class="carousel-content">
                             <div class="card-header">
-                                <img src="assets/brands/samtec.png" alt="Samtec logo - purchase order automation case study" loading="lazy">
+                                <img src="assets/brands/samtec.png" alt="Samtec logo" width="100" height="35" loading="lazy">
                                 <p class="category">Purchase Order</p>
                             </div>
                             <p>Horus Technology developed an automated system using Textract, A2I, and Lambda Routing to match and reconcile purchase orders with received goods and invoices, ensuring accuracy and efficiency</p>
@@ -361,12 +363,10 @@
 
                 <div class="carousel-controls">
                     <div class="button-group">
-                        <button class="prev">
+                        <button class="prev" aria-label="Previous slide">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8l8 8l1.41-1.41L7.83 13H20z"/></svg>
                         </button>
-
-                        <!-- Next Button -->
-                        <button class="next">
+                        <button class="next" aria-label="Next slide">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42s1.02.39 1.41 0l6.59-6.59a.996.996 0 0 0 0-1.41l-6.58-6.6a.996.996 0 1 0-1.41 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1"/></svg>
                         </button>
                     </div>
@@ -403,10 +403,10 @@
             <form id="contact-form" class="contact-form">
                 <div class="form-row">
                     <div class="form-group">
-                        <input type="text" id="fullName" name="fullName" required placeholder="Full Name" />
+                        <input type="text" id="fullName" name="fullName" required placeholder="Full Name">
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" name="email" required placeholder="Email" />
+                        <input type="email" id="email" name="email" required placeholder="Email">
                     </div>
                 </div>
                 <div class="form-group full">
@@ -475,7 +475,7 @@
     const nextBtn = document.querySelector('.next');
     const prevBtn = document.querySelector('.prev');
 
-    const scrollAmount = 500; // pixels per click
+    const scrollAmount = 500;
 
     nextBtn.addEventListener('click', () => {
         track.scrollBy({ left: scrollAmount, behavior: 'smooth' });

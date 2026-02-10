@@ -1879,3 +1879,25 @@ body {
         text-align: center;
     }
 }
+
+/* Card links */
+.card-link {
+    color: #FF9900;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+.inline-link {
+    color: #FF9900;
+    text-decoration: none;
+}
+
+.inline-link:hover {
+    text-decoration: underline;
+}

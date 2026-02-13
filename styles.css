@@ -1901,3 +1901,74 @@ body {
 .inline-link:hover {
     text-decoration: underline;
 }
+
+/* ==========================================
+   WEBGL ACCENT EFFECTS
+   ========================================== */
+
+.webgl-canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Remove hero background-image when WebGL is active */
+.hero.webgl-active {
+    background-image: none;
+}
+
+/* CSS gradient fallback mimicking hero-bg.svg pink glow (visible before JS loads) */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    right: -5%;
+    width: 60%;
+    height: 80%;
+    background: radial-gradient(ellipse at center, rgba(162, 40, 212, 0.25) 0%, rgba(140, 1, 250, 0.08) 40%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero.webgl-active::after {
+    display: none;
+}
+
+/* About section needs relative positioning for canvas stacking */
+.about {
+    position: relative;
+}
+
+.about > .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Contact glow canvas */
+#contact-glow-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Hide all WebGL effects for reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .webgl-canvas-container,
+    #contact-glow-canvas {
+        display: none !important;
+    }
+
+    .hero::after {
+        display: block;
+    }
+}

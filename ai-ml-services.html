@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI & ML Services Documentation | Horus Technologies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive documentation for Horus Technology's AI and ML services including AWS Bedrock, Textract, SageMaker, and custom AI solutions.">
+    <link rel="canonical" href="https://www.horustech.dev/ai-ml-services.html">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8HG04N5LZF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8HG04N5LZF');
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/icons/horus-icon.svg" type="image/svg+xml">
+
+    <style>
+        .docs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px 60px;
+        }
+
+        .docs-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .docs-header h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .docs-header p {
+            font-size: 20px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .docs-section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .service-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .service-tag {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .use-cases {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 16px;
+        }
+
+        .use-cases h4 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .use-cases ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .use-cases li {
+            padding: 8px 0;
+            color: #666;
+        }
+
+        .use-cases li:before {
+            content: "→ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .pricing-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 32px;
+            border-radius: 8px;
+            margin-top: 32px;
+        }
+
+        .pricing-info h3 {
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+<header role="banner">
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img width="52" height="52" src="assets/icons/horus-icon.svg" alt="Horus Technology logo">
+                <p>Horus Technologies</p>
+            </a>
+            <ul class="nav-links">
+                <li><a href="services.html">Services</a></li>
+                <li><a href="index.html#about">What We Do</a></li>
+                <li><a href="blog/blog.html">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" aria-label="Open mobile menu" role="button" tabindex="0">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="docs-container">
+    <div class="docs-header">
+        <h1>AI & ML Services</h1>
+        <p>Comprehensive AI and machine learning solutions powered by AWS and custom-built models</p>
+    </div>
+
+    <!-- AWS AI Services -->
+    <section class="docs-section">
+        <h2 class="section-title">AWS AI & ML Services</h2>
+        <p>Leverage enterprise-grade AI services with our deep AWS expertise</p>
+
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Amazon Bedrock</h3>
+                <p>Build and scale generative AI applications with foundation models from leading AI providers.</p>
+                <div>
+                    <span class="service-tag">Claude</span>
+                    <span class="service-tag">Titan</span>
+                    <span class="service-tag">Llama 3</span>
+                    <span class="service-tag">RAG</span>
+                </div>
+                <div class="use-cases">
+                    <h4>Use Cases</h4>
+                    <ul>
+                        <li>Customer service chatbots and virtual assistants</li>
+                        <li>Document summarization and analysis</li>
+                        <li>Code generation and software development</li>
+                        <li>Content creation and marketing automation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>Amazon Textract</h3>
+                <p>Extract text, forms, and tables from documents with 99%+ accuracy using ML-powered OCR.</p>
+                <div>
+                    <span class="service-tag">OCR</span>
+                    <span class="service-tag">Forms</span>
+                    <span class="service-tag">Tables</span>
+                    <span class="service-tag">Queries</span>
+                </div>
+                <div class="use-cases">
+                    <h4>Use Cases</h4>
+                    <ul>
+                        <li>Invoice and receipt processing</li>
+                        <li>Loan document extraction</li>
+                        <li>Medical records digitization</li>
+                        <li>Legal contract analysis</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>Amazon SageMaker</h3>
+                <p>Build, train, and deploy custom machine learning models at scale with managed infrastructure.</p>
+                <div>
+                    <span class="service-tag">Training</span>
+                    <span class="service-tag">Deployment</span>
+                    <span class="service-tag">AutoML</span>
+                    <span class="service-tag">MLOps</span>
+                </div>
+                <div class="use-cases">
+                    <h4>Use Cases</h4>
+                    <ul>
+                        <li>Custom model fine-tuning</li>
+                        <li>Predictive analytics and forecasting</li>
+                        <li>Computer vision applications</li>
+                        <li>Real-time inference endpoints</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>Amazon Comprehend</h3>
+                <p>Natural language processing for sentiment analysis, entity recognition, and document classification.</p>
+                <div>
+                    <span class="service-tag">NLP</span>
+                    <span class="service-tag">Sentiment</span>
+                    <span class="service-tag">Entities</span>
+                    <span class="service-tag">Classification</span>
+                </div>
+                <div class="use-cases">
+                    <h4>Use Cases</h4>
+                    <ul>
+                        <li>Customer feedback analysis</li>
+                        <li>Email classification and routing</li>
+                        <li>Content moderation</li>
+                        <li>Brand reputation monitoring</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>Amazon A2I (Augmented AI)</h3>
+                <p>Human-in-the-loop workflows for reviewing ML predictions and maintaining accuracy.</p>
+                <div>
+                    <span class="service-tag">Human Review</span>
+                    <span class="service-tag">Quality Control</span>
+                    <span class="service-tag">Workflow</span>
+                </div>
+                <div class="use-cases">
+                    <h4>Use Cases</h4>
+                    <ul>
+                        <li>Low-confidence prediction review</li>
+                        <li>Document validation workflows</li>
+                        <li>Content moderation queues</li>
+                        <li>Compliance verification</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>Amazon Rekognition</h3>
+                <p>Computer vision service for image and video analysis, facial recognition, and object detection.</p>
+                <div>
+                    <span class="service-tag">Vision</span>
+                    <span class="service-tag">Faces</span>
+                    <span class="service-tag">Objects</span>
+                    <span class="service-tag">Video</span>
+                </div>
+                <div class="use-cases">
+                    <h4>Use Cases</h4>
+                    <ul>
+                        <li>Identity verification</li>
+                        <li>Content moderation</li>
+                        <li>Visual search</li>
+                        <li>Safety and security monitoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intelligent Document Processing -->
+    <section class="docs-section">
+        <h2 class="section-title">Intelligent Document Processing</h2>
+        <p>End-to-end document automation workflows</p>
+
+        <div class="service-card">
+            <h3>Complete IDP Pipeline</h3>
+            <p>Our IDP solution combines multiple AWS services into a seamless workflow:</p>
+            <div class="use-cases">
+                <h4>Pipeline Components</h4>
+                <ul>
+                    <li><strong>Document Ingestion:</strong> S3 + Lambda triggers for automatic processing</li>
+                    <li><strong>Text Extraction:</strong> Textract for OCR with 99%+ accuracy</li>
+                    <li><strong>Classification:</strong> Comprehend for document type identification</li>
+                    <li><strong>Data Validation:</strong> Custom business logic with Lambda</li>
+                    <li><strong>Human Review:</strong> A2I for low-confidence predictions</li>
+                    <li><strong>Data Storage:</strong> DynamoDB or RDS for structured data</li>
+                    <li><strong>Orchestration:</strong> Step Functions for complex workflows</li>
+                </ul>
+            </div>
+
+            <div class="pricing-info">
+                <h3>Typical ROI</h3>
+                <p><strong>80% reduction</strong> in processing time | <strong>95%+ accuracy</strong> | <strong>65% cost savings</strong> vs manual processing</p>
+                <p style="margin-top: 12px; font-size: 14px;">Based on actual client implementations (BMO, DegreeData, Ford Credit)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom AI Solutions -->
+    <section class="docs-section">
+        <h2 class="section-title">Custom AI Solutions</h2>
+
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Model Fine-Tuning</h3>
+                <p>Customize foundation models for your specific use case</p>
+                <ul style="margin-top: 16px; padding-left: 20px;">
+                    <li>Domain-specific language models</li>
+                    <li>Custom entity recognition</li>
+                    <li>Industry-specific terminology</li>
+                    <li>Proprietary data training</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>RAG Implementation</h3>
+                <p>Retrieval-Augmented Generation for accurate, grounded AI responses</p>
+                <ul style="margin-top: 16px; padding-left: 20px;">
+                    <li>Vector database setup (OpenSearch)</li>
+                    <li>Document embedding pipelines</li>
+                    <li>Semantic search integration</li>
+                    <li>Real-time knowledge updates</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>AI Agents</h3>
+                <p>Autonomous agents that take action on your behalf</p>
+                <ul style="margin-top: 16px; padding-left: 20px;">
+                    <li>Multi-step task automation</li>
+                    <li>API integration and orchestration</li>
+                    <li>Decision-making workflows</li>
+                    <li>Tool-using capabilities</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Started -->
+    <section class="docs-section">
+        <h2 class="section-title">Get Started</h2>
+        <div class="service-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <h3 style="color: white;">Ready to Transform Your Business with AI?</h3>
+            <p style="color: rgba(255,255,255,0.9);">Schedule a consultation with our AI experts to discuss your use case</p>
+            <ul style="margin-top: 20px; padding-left: 20px; color: rgba(255,255,255,0.9);">
+                <li>Free 30-minute consultation</li>
+                <li>Custom architecture recommendations</li>
+                <li>ROI projections and cost estimates</li>
+                <li>Proof-of-concept development</li>
+            </ul>
+            <div style="margin-top: 24px;">
+                <a href="index.html#contact" style="background: white; color: #667eea; padding: 12px 32px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-block;">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-text">
+            <h2>Horus Technology</h2>
+            <p>© 2025 Horus Technology. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>
